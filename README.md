@@ -141,7 +141,28 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-8.  ### References
+8.  ### Use sub-resource collections for relations
+
+    Sub-resource collections should exist directly beneath an individual resource to convey a relationship to another collection of resources. This helps maintain a logical structure and hierarchy in the API design.
+
+    Here are a few examples to show how the endpoints should look like,
+
+    | Incorrect                        | Correct                  |
+    | -------------------------------- | ------------------------ |
+    | /api/users/1/friends             | /api/users/1/friends     |
+    | /api/users/1/friends/2           | /api/users/1/friends/2   |
+    | /api/users/1/posts               | /api/users/1/posts       |
+    | /api/users/1/posts/5             | /api/users/1/posts/5     |
+    | /api/users/1/posts/5/comments    | /api/posts/5/comments    |
+    | /api/users/1/posts/5/comments/10 | /api/posts/5/comments/10 |
+    | /api/users/1/roles               | /api/users/1/roles       |
+    | /api/users/1/roles/3             | /api/users/1/roles/3     |
+
+    In the correct examples, sub-resource collections are used to represent relations between resources. This provides a more intuitive and hierarchical structure, making it easier to navigate and understand the API endpoints.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+9.  ### References
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
