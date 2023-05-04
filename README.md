@@ -33,9 +33,9 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-2.  ### Use Nouns Instead of Verbs
+2.  ### Use HTTP methods to communicate intent
 
-    When designing a REST API, it is recommended to use nouns in the endpoint paths rather than verbs. This is because HTTP methods such as GET, POST, PUT, PATCH, and DELETE already represent the actions that can be performed on a resource.
+    One of the key principles of REST APIs is the use of standard HTTP methods to communicate the intent of the request.
 
     The following table helps you in understanding the REST API Verbs:
 
@@ -48,7 +48,15 @@
     | PATCH     | Modifies the given record                            |
     | DELETE    | Deletes the given resource                           |
 
-    Do not use verbs in the URI. Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
+    Reources :
+
+    - [PATCH vs PUT in REST API ](https://josipmisko.com/posts/patch-vs-put-rest-api) Differences between PATCH and PUT
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+3.  ### Do not use verbs in the URI
+
+    Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
 
     Here are a few examples to show how the endpoints should look like,
 
@@ -60,14 +68,10 @@
     | PUT /updateUser/1    | PUT /users/1    |
     | DELETE /deleteUser/1 | DELETE /users/1 |
     | PATCH /modifyUser/1  | PATCH /users/1  |
-    | HEAD /checkUser/1    | HEAD /users/1   |
-    | OPTIONS /listUsers   | OPTIONS /users  |
-    | TRACE /traceUser/1   | TRACE /users/1  |
-    | CONNECT /connectUser | CONNECT /users  |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-3.  ### Use Plural nouns
+4.  ### Use Plural nouns
 
     Use plural when possible unless they are singleton resources.
 
@@ -81,13 +85,11 @@
     | PUT /users/123              | PUT /user/123                       |
     | PATCH /users/123            | PATCH /user/123                     |
     | DELETE /users/123           | DELETE /user/123                    |
-    | OPTIONS /users              | OPTIONS /user                       |
-    | HEAD /users                 | HEAD /user                          |
     | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30 |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-4.  ### Use Lowercase letters
+5.  ### Use Lowercase letters
 
     URIs should start with a letter and use only lowercase letters.
 
@@ -101,7 +103,30 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-5.  ### References
+6.  ### Use hyphens (-) to improve the readability of URIs
+
+    Avoid using underscores, spaces, special characters, camel case, or Pascal case in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
+
+    Here's the table with examples for all HTTP methods:
+
+    | Incorrect URIs    | Correct URIs    |
+    | ----------------- | --------------- |
+    | /userRoles        | /user-roles     |
+    | /UserRoles        | /user-roles     |
+    | /user_roles       | /user-roles     |
+    | /user roles       | /user-roles     |
+    | /user%20roles     | /user-roles     |
+    | /userRoles/123    | /user-roles/123 |
+    | /User_Roles       | /user-roles     |
+    | /user roles/123   | /user-roles/123 |
+    | /user-roles/abc   | /user-roles/abc |
+    | /User-Roles/123   | /user-roles/123 |
+    | /user_roles/123   | /user-roles/123 |
+    | /user%20roles/123 | /user-roles/123 |
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+7.  ### References
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
