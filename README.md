@@ -75,7 +75,7 @@
 
     Use plural when possible unless they are singleton resources.
 
-    Here's the table with examples for all HTTP methods:
+    Here are a few examples to show how the endpoints should look like,
 
     | Do's                        | Don'ts                              |
     | --------------------------- | ----------------------------------- |
@@ -93,7 +93,7 @@
 
     URIs should start with a letter and use only lowercase letters.
 
-    Here's the table with examples for all HTTP methods:
+    Here are a few examples to show how the endpoints should look like,
 
     | Incorrect        | Correct    |
     | ---------------- | ---------- |
@@ -103,11 +103,11 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-6.  ### Use hyphens (-) to improve the readability of URIs
+6.  ### Use hyphens (-) to separate words or segments in the URI path
 
     Avoid using underscores, spaces, special characters, camel case, or Pascal case in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
 
-    Here's the table with examples for all HTTP methods:
+    Here are a few examples to show how the endpoints should look like,
 
     | Incorrect URIs    | Correct URIs    |
     | ----------------- | --------------- |
@@ -126,7 +126,22 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-7.  ### References
+7.  ### Underscore separate query strings
+
+    literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
+
+    Here are a few examples to show how the endpoints should look like,
+
+    | Incorrect                           | Correct                               |
+    | ----------------------------------- | ------------------------------------- |
+    | /api/users?sortBy=firstName_desc    | /api/users?sort_by=firstName_desc     |
+    | /api/users?filterBy=active          | /api/users?filter_by=active           |
+    | /api/users?pageSize=10&pageNumber=2 | /api/users?page_size=10&page_number=2 |
+    | /api/users?searchQuery=john         | /api/users?search_query=john          |
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+8.  ### References
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
