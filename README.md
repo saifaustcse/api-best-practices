@@ -162,7 +162,25 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-9.  ### References
+9.  ### Use top-level resources (when possible)
+
+    We should aim for limited nesting of resources.
+
+    Here are a few examples to show how the endpoints should look like,
+
+    | Incorrect                                | Correct                  |
+    | ---------------------------------------- | ------------------------ |
+    | /api/users/1/posts/5/comments/10/replies | /api/comments/10/replies |
+    | /api/users/1/posts/5/tags                | /api/posts/5/tags        |
+    | /api/users/1/posts/5/comments/10/likes   | /api/comments/10/likes   |
+    | /api/users/1/posts/5/author              | /api/posts/5/author      |
+    | /api/users/1/posts/5/author/followers    | /api/users/1/followers   |
+
+    In the examples, the nesting of resources is limited to a reasonable level. This helps to avoid overly complex and deeply nested URIs, making the API more intuitive and easier to work with. It also promotes a flatter and more modular structure, allowing for better scalability and maintainability of the API.
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+10. ### References
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
