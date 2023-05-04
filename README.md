@@ -17,6 +17,38 @@
 | 1   | [What are Design Patterns?](#What-are-Design-Patterns) |
 | 2   | [Factory Design Pattern](#Factory-Design-Pattern)      |
 
+1.  ### breakdown of the parts in the provided URI
+
+    Here's the breakdown of the parts in the provided URI:
+
+    1. Protocol Scheme:
+
+    - `http` or `https`: Not mentioned in the provided URI.
+
+    2. Domain Name:
+
+    - `api.example.com`: Not mentioned in the provided URI.
+
+    3. Base Path:
+
+    - Not mentioned in the provided URI.
+
+    4. Resource Path:
+
+    - `/api/users/1/roles`
+    - Description: Represents the resource path to access user roles associated with the user identified by the ID `1`.
+
+    5. Query Parameters:
+
+    - `sort_by=firstName_desc`
+    - Description: Query parameter used to specify the sorting order of the results. In this case, it indicates sorting by the `firstName` field in descending order.
+
+    6. Fragment Identifier:
+
+    - Not mentioned in the provided URI.
+
+    Please note that the breakdown provided above assumes a standard URI structure, and the actual names used may vary depending on the specific API design or organization.
+
 1.  ### Use JSON as the Format for Sending and Receiving Data
 
     In modern API development, JSON (JavaScript Object Notation) has become the standard format for sending and receiving data. It has largely replaced XML and HTML due to its simplicity and widespread support.
@@ -33,7 +65,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-2.  ### Use HTTP methods to communicate intent
+1.  ### Use HTTP methods to communicate intent
 
     One of the key principles of REST APIs is the use of standard HTTP methods to communicate the intent of the request.
 
@@ -54,7 +86,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-3.  ### Do not use verbs in the URI
+1.  ### Do not use verbs in the URI
 
     Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
 
@@ -71,7 +103,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-4.  ### Use Plural nouns
+1.  ### Use Plural nouns
 
     Use plural when possible unless they are singleton resources.
 
@@ -89,7 +121,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-5.  ### Use Lowercase letters
+1.  ### Use Lowercase letters
 
     URIs should start with a letter and use only lowercase letters.
 
@@ -103,7 +135,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-6.  ### Use hyphens (-) to separate words or segments in the URI path
+1.  ### Use hyphens (-) to separate words or segments in the URI path
 
     Avoid using underscores, spaces, special characters, camel case, or Pascal case in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
 
@@ -126,7 +158,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-7.  ### Underscore separate query strings
+1.  ### Underscore separate query strings
 
     literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
 
@@ -141,7 +173,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-8.  ### Use sub-resource collections for relations
+1.  ### Use sub-resource collections for relations
 
     Sub-resource collections should exist directly beneath an individual resource to convey a relationship to another collection of resources. This helps maintain a logical structure and hierarchy in the API design.
 
@@ -162,7 +194,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-9.  ### Use top-level resources (when possible)
+1.  ### Use top-level resources (when possible)
 
     We should aim for limited nesting of resources.
 
@@ -180,7 +212,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-10. ### References
+1.  ### References
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
