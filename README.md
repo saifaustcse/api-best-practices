@@ -52,19 +52,18 @@
 
     Here are a few examples to show how the endpoints should look like,
 
-    | Incorrect            | Correct           |
-    | -------------------- | ----------------- |
-    | GET /getAllUsers     | GET /users        |
-    | GET /getUserById/1   | GET /users/1      |
-    | POST /createUser     | POST /users       |
-    | PUT /updateUser/1    | PUT /users/1      |
-    | DELETE /deleteUser/1 | DELETE /users/1   |
-    | PATCH /modifyUser/1  | PATCH /users/1    |
-    | HEAD /checkUser/1    | HEAD /users/1     |
-    | OPTIONS /listUsers   | OPTIONS /users    |
-    | TRACE /traceUser/1   | TRACE /users/1    |
-    | CONNECT /connectUser | CONNECT /users    |
-
+    | Incorrect            | Correct         |
+    | -------------------- | --------------- |
+    | GET /getAllUsers     | GET /users      |
+    | GET /getUserById/1   | GET /users/1    |
+    | POST /createUser     | POST /users     |
+    | PUT /updateUser/1    | PUT /users/1    |
+    | DELETE /deleteUser/1 | DELETE /users/1 |
+    | PATCH /modifyUser/1  | PATCH /users/1  |
+    | HEAD /checkUser/1    | HEAD /users/1   |
+    | OPTIONS /listUsers   | OPTIONS /users  |
+    | TRACE /traceUser/1   | TRACE /users/1  |
+    | CONNECT /connectUser | CONNECT /users  |
 
     **[⬆ Back to Top](#table-of-contents)**
 
@@ -86,10 +85,23 @@
     | HEAD /users                 | HEAD /user                          |
     | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30 |
 
+    **[⬆ Back to Top](#table-of-contents)**
+
+4.  ### Use Lowercase letters
+
+    URIs should start with a letter and use only lowercase letters.
+
+    Here's the table with examples for all HTTP methods:
+
+    | Incorrect        | Correct    |
+    | ---------------- | ---------- |
+    | GET /getAllUsers | GET /users |
+    | GET /GetAllUsers | GET /users |
+    | GET /USERS       | GET /users |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-4.  ### References
+5.  ### References
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
