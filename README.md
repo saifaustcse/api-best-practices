@@ -12,11 +12,10 @@
 
 ### Table of Contents
 
-| No. | Topic                                                               |
-| --- | ------------------------------------------------------------------- |
-| 1   | [What are Design Patterns?](#What-are-Design-Patterns)              |
-| 2   | [Factory Design Pattern](#Factory-Design-Pattern)                   |
-
+| No. | Topic                                                  |
+| --- | ------------------------------------------------------ |
+| 1   | [What are Design Patterns?](#What-are-Design-Patterns) |
+| 2   | [Factory Design Pattern](#Factory-Design-Pattern)      |
 
 1.  ### Use JSON as the Format for Sending and Receiving Data
 
@@ -32,30 +31,36 @@
 
     The rewritten information focuses on the benefits of using JSON, highlights the support in various programming languages, and explains the importance of setting the Content-Type header. It also provides specific examples for working with JSON in Python and mentions popular server-side frameworks like Express.
 
-
     **[⬆ Back to Top](#table-of-contents)**
-
 
 2.  ### Use Nouns Instead of Verbs in Endpoints
 
-    When you're designing a REST API, you should not use verbs in the endpoint paths. The endpoints should use nouns, signifying what each of them does.
+    When designing a REST API, it is recommended to use nouns in the endpoint paths rather than verbs. This is because HTTP methods such as GET, POST, PUT, PATCH, and DELETE already represent the actions that can be performed on a resource.
 
-    This is because HTTP methods such as GET, POST, PUT, PATCH, and DELETE are already in verb form for performing basic CRUD (Create, Read, Update, Delete) operations.
+    The following table helps you in understanding the REST API Verbs:
 
-    GET, POST, PUT, PATCH, and DELETE are the commonest HTTP verbs. There are also others such as COPY, PURGE, LINK, UNLINK, and so on.
+    | REST Verb | Action                                               |
+    | --------- | ---------------------------------------------------- |
+    | GET       | Fetches a record or set of resources from the server |
+    | OPTIONS   | Fetches all available REST operations                |
+    | POST      | Creates a new set of resources or a resource         |
+    | PUT       | Updates or replaces the given record                 |
+    | PATCH     | Modifies the given record                            |
+    | DELETE    | Deletes the given resource                           |
 
-    So, for example, an endpoint should not look like this:
+    Do not use verbs in the URI. Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
+    
+    Here are a few examples to show how the endpoints should look like,
 
-    https://mysite.com/getPosts or https://mysite.com/createPost
-
-    Instead, it should be something like this: https://mysite.com/posts
-
-    In short, you should let the HTTP verbs handle what the endpoints do. So GET would retrieve data, POST will create data, PUT will update data, and DELETE will get rid of the data.
+    | Incorrect               | Correct           |
+    | ----------------------- | ----------------- |
+    | GET /getAllUsers        | GET /users        |
+    | POST /createUser        | POST /users       |
+    | PUT /updateUser/1       | PUT /users/1      |
+    | DELETE /deleteUser/1    | DELETE /users/1   |
 
 
     **[⬆ Back to Top](#table-of-contents)**
-
-
 
 4.  ### Abstract Factory Design Pattern
 
@@ -109,16 +114,13 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-
-16. ### References
+5.  ### References
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
     - [dotnettutorials](https://dotnettutorials.net/course/dot-net-design-patterns/) Design Patterns in C# With Real-Time Examples
 
-
     **[⬆ Back to Top](#table-of-contents)**
-
 
 ## License
 
