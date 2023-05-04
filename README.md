@@ -33,7 +33,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-2.  ### Use Nouns Instead of Verbs in Endpoints
+2.  ### Use Nouns Instead of Verbs
 
     When designing a REST API, it is recommended to use nouns in the endpoint paths rather than verbs. This is because HTTP methods such as GET, POST, PUT, PATCH, and DELETE already represent the actions that can be performed on a resource.
 
@@ -49,72 +49,47 @@
     | DELETE    | Deletes the given resource                           |
 
     Do not use verbs in the URI. Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
-    
+
     Here are a few examples to show how the endpoints should look like,
 
-    | Incorrect               | Correct           |
-    | ----------------------- | ----------------- |
-    | GET /getAllUsers        | GET /users        |
-    | POST /createUser        | POST /users       |
-    | PUT /updateUser/1       | PUT /users/1      |
-    | DELETE /deleteUser/1    | DELETE /users/1   |
+    | Incorrect            | Correct           |
+    | -------------------- | ----------------- |
+    | GET /getAllUsers     | GET /users        |
+    | GET /getUserById/1   | GET /users/1      |
+    | POST /createUser     | POST /users       |
+    | PUT /updateUser/1    | PUT /users/1      |
+    | DELETE /deleteUser/1 | DELETE /users/1   |
+    | PATCH /modifyUser/1  | PATCH /users/1    |
+    | HEAD /checkUser/1    | HEAD /users/1     |
+    | OPTIONS /listUsers   | OPTIONS /users    |
+    | TRACE /traceUser/1   | TRACE /users/1    |
+    | CONNECT /connectUser | CONNECT /users    |
 
 
     **[⬆ Back to Top](#table-of-contents)**
 
-4.  ### Abstract Factory Design Pattern
+3.  ### Use Plural nouns
 
-    Intent
+    Use plural when possible unless they are singleton resources.
 
-    > Encapsulate a group of individual factories that have a common theme without specifying their concrete classes.
+    Here's the table with examples for all HTTP methods:
 
-    In simple words we can say, the Abstract Factory is a super factory that creates other factories. This Factory is also called Factory of Factories.
+    | Do's                        | Don'ts                              |
+    | --------------------------- | ----------------------------------- |
+    | GET /users/123              | GET /user/123                       |
+    | POST /users                 | POST /user                          |
+    | GET /users                  | GET /user                           |
+    | PUT /users/123              | PUT /user/123                       |
+    | PATCH /users/123            | PATCH /user/123                     |
+    | DELETE /users/123           | DELETE /user/123                    |
+    | OPTIONS /users              | OPTIONS /user                       |
+    | HEAD /users                 | HEAD /user                          |
+    | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30 |
 
-    Advantages
-
-    - Abstract Factory Pattern isolates the client code from concrete (implementation) classes.
-    - It eases the exchanging of object families.
-    - It promotes consistency among objects.
-
-    We need to choose the Abstract Factory Design Pattern, when
-
-    - The system needs to be independent of how its object are created, composed, and represented.
-    - The family of related objects has to be used together, then this constraint needs to be enforced.
-    - We want to provide a library of objects that does not show implementations and only reveals interfaces.
-    - The system needs to be configured with one of a multiple family of objects.
-
-    <br>
-    <details>
-    <summary><b>Abstract Factory Design Pattern realword example ()</b></summary>
-    <br>
-
-    Run the following C# console application in visual studio or visual studio code, also you can run code in [online](https://code.sololearn.com/#cs)
-
-        using System;
-
-        namespace AbsFactoryMethodDesignPattern
-        {
-
-        }
-
-    </details>
-
-    <details>
-    <summary><b>Abstract Factory Design Pattern realword example ()</b></summary>
-
-    Run the following C# console application in visual studio or visual studio code, also you can run code in [online](https://code.sololearn.com/#cs)
-
-        using System;
-
-        namespace FactoryDesignPattern
-        {
-        }
-
-    </details>
 
     **[⬆ Back to Top](#table-of-contents)**
 
-5.  ### References
+4.  ### References
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
