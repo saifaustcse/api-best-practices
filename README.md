@@ -215,18 +215,57 @@
     Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
 
     - [medium](https://medium.com/@nadinCodeHat/rest-api-naming-conventions-and-best-practices-1c4e781eb6a5)
-    - [hevodata](https://hevodata.com/learn/rest-api-best-practices/)
-    - [josipmisko](https://josipmisko.com/posts/rest-api-best-practices)
     - [freecodecamp](https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/)
+    - [josipmisko](https://josipmisko.com/posts/rest-api-best-practices)
+    - [hevodata](https://hevodata.com/learn/rest-api-best-practices/)
     - [partech](https://www.partech.nl/nl/publicaties/2020/07/9-trending-best-practices-for-rest-api-development#)
     - [stackoverflow](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
-    - [github](https://gist.github.com/Londeren/838c8a223b92aa4017d3734d663a0ba3)
     - [twitter](https://developer.twitter.com/en/docs/api-reference-index)
     - [apidocjs](https://apidocjs.com/example/)
     - [github](https://docs.github.com/en)
     - [github](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)
 
     **[⬆ Back to Top](#table-of-contents)**
+
+## Good Practices
+
+- [Microsoft REST API Guidelines](https://github.com/Microsoft/api-guidelines/)
+- [Learn REST: A RESTful Tutorial](http://www.restapitutorial.com/) и [книга](https://github.com/tfredrich/RestApiTutorial.com/raw/master/media/RESTful%20Best%20Practices-v1_2.pdf) по мотивам сайта
+- [How to design a REST API](http://blog.octo.com/en/design-a-rest-api/)
+- [Best Practices for Designing a Pragmatic RESTful API](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
+- [White House Web API Standards](https://github.com/WhiteHouse/api-standards)
+- [10 Best Practices for Better RESTful API](http://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/)
+- [API design best practices](http://blogs.mulesoft.com/tag/series/)
+- [Создание RESTful API](http://anton.shevchuk.name/php/create-restful-api/)
+- [Шпаргалка по созданию RESTful API](http://noteskeeper.ru/1161/)
+
+## Errors and statuses
+
+- [API Best Practices: Response Handling](http://blogs.mulesoft.com/api-best-practices-response-handling/)
+- [RESTful API Design: what about errors?](https://blog.apigee.com/detail/restful_api_design_what_about_errors)
+- [Error handling considerations and best practices](http://soabits.blogspot.ru/2013/05/error-handling-considerations-and-best.html)
+
+## Pagination
+
+- [API pagination best practices](http://stackoverflow.com/questions/13872273/api-pagination-best-practices)
+
+## Examples
+
+- [twitter](https://dev.twitter.com/rest/public)
+- [github](https://developer.github.com/v3/)
+- [instagram](https://instagram.com/developer/endpoints/)
+- [facebook](https://developers.facebook.com/docs/graph-api/using-graph-api/)
+- [vk](http://vk.com/dev/methods)
+- [pinterest](https://developers.pinterest.com/docs/api/overview/)
+
+## Tools
+
+- [Swagger Framework for APIs](http://swagger.io/)
+- [apiDoc](http://apidocjs.com/)
+
+## Testing in a browser
+
+- [Postman для google chrome](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
 
 ## License
 
