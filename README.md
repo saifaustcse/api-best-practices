@@ -1,10 +1,6 @@
-## Software Design Patterns
-
-> Though there are 1000’s of articles about **Software Design Patterns**, I have written this article is in order to document with simple C# realworld example with short and easy description. I have also created another repository regarding [Software Design principles](https://github.com/saifaustcse/software-design-patterns) which can be helpful as well.
-
 ## Give a Star! :star:
 
-> If you like or are using this project to learn or start your solution, please give it a star. Thanks!
+> If you find this documentation helpful for learning , please give it a star. Your support is appreciated!
 
 ## Find me
 
@@ -49,7 +45,7 @@
 
     Please note that the breakdown provided above assumes a standard URI structure, and the actual names used may vary depending on the specific API design or organization.
 
-1.  ### Use JSON as the Format for Sending and Receiving Data
+2.  ### Use JSON as the Format for Sending and Receiving Data
 
     In modern API development, JSON (JavaScript Object Notation) has become the standard format for sending and receiving data. It has largely replaced XML and HTML due to its simplicity and widespread support.
 
@@ -65,7 +61,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-1.  ### Use HTTP methods to communicate intent
+3.  ### Use HTTP methods to communicate intent
 
     One of the key principles of REST APIs is the use of standard HTTP methods to communicate the intent of the request.
 
@@ -86,24 +82,24 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-1.  ### Do not use verbs in the URI
+4.  ### Do not use verbs in the URI
 
     Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
 
     Here are a few examples to show how the endpoints should look like,
 
-    | Incorrect            | Correct         |
-    | -------------------- | --------------- |
-    | GET /getAllUsers     | GET /users      |
-    | GET /getUserById/1   | GET /users/1    |
-    | POST /createUser     | POST /users     |
-    | PUT /updateUser/1    | PUT /users/1    |
-    | DELETE /deleteUser/1 | DELETE /users/1 |
-    | PATCH /modifyUser/1  | PATCH /users/1  |
+    | Do's            | Don'ts               |
+    | --------------- | -------------------- |
+    | POST /users     | POST /createUser     |
+    | GET /users      | GET /getAllUsers     |
+    | GET /users/1    | GET /getUserById/1   |
+    | PUT /users/1    | PUT /updateUser/1    |
+    | PATCH /users/1  | PATCH /modifyUser/1  |
+    | DELETE /users/1 | DELETE /deleteUser/1 |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-1.  ### Use Plural nouns
+5.  ### Use Plural nouns
 
     Use plural when possible unless they are singleton resources.
 
@@ -111,9 +107,9 @@
 
     | Do's                        | Don'ts                              |
     | --------------------------- | ----------------------------------- |
-    | GET /users/123              | GET /user/123                       |
     | POST /users                 | POST /user                          |
     | GET /users                  | GET /user                           |
+    | GET /users/123              | GET /user/123                       |
     | PUT /users/123              | PUT /user/123                       |
     | PATCH /users/123            | PATCH /user/123                     |
     | DELETE /users/123           | DELETE /user/123                    |
@@ -121,98 +117,94 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-1.  ### Use Lowercase letters
+6.  ### Use Lowercase letters
 
     URIs should start with a letter and use only lowercase letters.
 
     Here are a few examples to show how the endpoints should look like,
 
-    | Incorrect        | Correct    |
-    | ---------------- | ---------- |
-    | GET /getAllUsers | GET /users |
-    | GET /GetAllUsers | GET /users |
-    | GET /USERS       | GET /users |
+    | Do's       | Don'ts           |
+    | ---------- | ---------------- |
+    | GET /users | GET /getAllUsers |
+    | GET /users | GET /GetAllUsers |
+    | GET /users | GET /USERS       |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-1.  ### Use hyphens (-) to separate words or segments in the URI path
+7.  ### Use hyphens (-) to separate words or segments in the URI path
 
-    Avoid using underscores, spaces, special characters, camel case, or Pascal case in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
+    Avoid using underscores, camel case, Pascal case, spaces, special characters in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
 
     Here are a few examples to show how the endpoints should look like,
 
-    | Incorrect URIs    | Correct URIs    |
-    | ----------------- | --------------- |
-    | /userRoles        | /user-roles     |
-    | /UserRoles        | /user-roles     |
-    | /user_roles       | /user-roles     |
-    | /user roles       | /user-roles     |
-    | /user%20roles     | /user-roles     |
-    | /userRoles/123    | /user-roles/123 |
-    | /User_Roles       | /user-roles     |
-    | /user roles/123   | /user-roles/123 |
-    | /user-roles/abc   | /user-roles/abc |
-    | /User-Roles/123   | /user-roles/123 |
-    | /user_roles/123   | /user-roles/123 |
-    | /user%20roles/123 | /user-roles/123 |
+    | Do's            | Don'ts            |
+    | --------------- | ----------------- |
+    | /user-roles     | /user_roles       |
+    | /user-roles     | /User_Roles       |
+    | /user-roles     | /userRoles        |
+    | /user-roles     | /UserRoles        |
+    | /user-roles     | /user%20roles     |
+    | /user-roles     | /user roles       |
+    | /user-roles/123 | /user_roles/123   |
+    | /user-roles/123 | /User_Roles/123   |
+    | /user-roles/123 | /userRoles/123    |
+    | /user-roles/123 | /UserRoles/123    |
+    | /user-roles/123 | /user roles/123   |
+    | /user-roles/123 | /user%20roles/123 |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-1.  ### Underscore separate query strings
+8.  ### Use Underscore (\_) separate query strings in the URI path
 
     literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
 
     Here are a few examples to show how the endpoints should look like,
 
-    | Incorrect                           | Correct                               |
-    | ----------------------------------- | ------------------------------------- |
-    | /api/users?sortBy=firstName_desc    | /api/users?sort_by=firstName_desc     |
-    | /api/users?filterBy=active          | /api/users?filter_by=active           |
-    | /api/users?pageSize=10&pageNumber=2 | /api/users?page_size=10&page_number=2 |
-    | /api/users?searchQuery=john         | /api/users?search_query=john          |
+    | Do's                                  | Don'ts                              |
+    | ------------------------------------- | ----------------------------------- |
+    | /api/users?sort_by=firstName_desc     | /api/users?sortBy=firstName_desc    |
+    | /api/users?filter_by=active           | /api/users?filterBy=active          |
+    | /api/users?page_size=10&page_number=2 | /api/users?pageSize=10&pageNumber=2 |
+    | /api/users?search_query=john          | /api/users?searchQuery=john         |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-1.  ### Use sub-resource collections for relations
+9.  ### Use sub-resource collections for relations
 
-    Sub-resource collections should exist directly beneath an individual resource to convey a relationship to another collection of resources. This helps maintain a logical structure and hierarchy in the API design.
+    Sub-resources related to a collection of resources should be placed directly under a specific resource to show their connection. This makes sure the API design is well-organized with a clear structure and order.
 
     Here are a few examples to show how the endpoints should look like,
 
-    | Incorrect                        | Correct                  |
-    | -------------------------------- | ------------------------ |
-    | /api/users/1/friends             | /api/users/1/friends     |
-    | /api/users/1/friends/2           | /api/users/1/friends/2   |
-    | /api/users/1/posts               | /api/users/1/posts       |
-    | /api/users/1/posts/5             | /api/users/1/posts/5     |
-    | /api/users/1/posts/5/comments    | /api/posts/5/comments    |
-    | /api/users/1/posts/5/comments/10 | /api/posts/5/comments/10 |
-    | /api/users/1/roles               | /api/users/1/roles       |
-    | /api/users/1/roles/3             | /api/users/1/roles/3     |
-
-    In the correct examples, sub-resource collections are used to represent relations between resources. This provides a more intuitive and hierarchical structure, making it easier to navigate and understand the API endpoints.
+    | Do's                     | Don'ts                           |
+    | ------------------------ | -------------------------------- |
+    | /api/users/1/roles       | /api/users/1/roles               |
+    | /api/users/1/roles/3     | /api/users/1/roles/3             |
+    | /api/users/1/friends     | /api/users/1/friends             |
+    | /api/users/1/friends/2   | /api/users/1/friends/2           |
+    | /api/users/1/posts       | /api/users/1/posts               |
+    | /api/users/1/posts/5     | /api/users/1/posts/5             |
+    | /api/posts/5/comments    | /api/users/1/posts/5/comments    |
+    | /api/posts/5/comments/10 | /api/users/1/posts/5/comments/10 |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-1.  ### Use top-level resources (when possible)
+10. ### Use top-level resources (when possible)
 
-    We should aim for limited nesting of resources.
+    Limit the nesting of resources to a reasonable level in APIs. This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
 
     Here are a few examples to show how the endpoints should look like,
 
-    | Incorrect                                | Correct                  |
-    | ---------------------------------------- | ------------------------ |
-    | /api/users/1/posts/5/comments/10/replies | /api/comments/10/replies |
-    | /api/users/1/posts/5/tags                | /api/posts/5/tags        |
-    | /api/users/1/posts/5/comments/10/likes   | /api/comments/10/likes   |
-    | /api/users/1/posts/5/author              | /api/posts/5/author      |
-    | /api/users/1/posts/5/author/followers    | /api/users/1/followers   |
-
-    In the examples, the nesting of resources is limited to a reasonable level. This helps to avoid overly complex and deeply nested URIs, making the API more intuitive and easier to work with. It also promotes a flatter and more modular structure, allowing for better scalability and maintainability of the API.
+    | Correct                  | Incorrect                                |
+    | ------------------------ | ---------------------------------------- |
+    | /api/comments/10/replies | /api/users/1/posts/5/comments/10/replies |
+    | /api/posts/5/tags        | /api/users/1/posts/5/tags                |
+    | /api/comments/10/likes   | /api/users/1/posts/5/comments/10/likes   |
+    | /api/posts/5/author      | /api/users/1/posts/5/author              |
+    | /api/users/1/followers   | /api/users/1/posts/5/author/followers    |
 
     **[⬆ Back to Top](#table-of-contents)**
 
-1.  ### References
+11. ### References
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
