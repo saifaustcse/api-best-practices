@@ -212,7 +212,17 @@
 
     I have followed many articles but among them, the following articles are really helpful. Those articles helped me a lot and also encourage me to write this article according to my understanding.
 
-    - [dotnettutorials](https://dotnettutorials.net/course/dot-net-design-patterns/) Design Patterns in C# With Real-Time Examples
+    - [medium](https://medium.com/@nadinCodeHat/rest-api-naming-conventions-and-best-practices-1c4e781eb6a5)
+    - [hevodata](https://hevodata.com/learn/rest-api-best-practices/)
+    - [josipmisko](https://josipmisko.com/posts/rest-api-best-practices)
+    - [freecodecamp](https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/)
+    - [partech](https://www.partech.nl/nl/publicaties/2020/07/9-trending-best-practices-for-rest-api-development#)
+    - [stackoverflow](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
+    - [github](https://gist.github.com/Londeren/838c8a223b92aa4017d3734d663a0ba3)
+    - [twitter](https://developer.twitter.com/en/docs/api-reference-index)
+    - [apidocjs](https://apidocjs.com/example/)
+    - [github](https://docs.github.com/en)
+    - [github](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)
 
     **[⬆ Back to Top](#table-of-contents)**
 
