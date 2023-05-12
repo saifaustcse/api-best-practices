@@ -234,7 +234,7 @@
 
     GET /users?limit=120
     GET /users?offset=3
-    
+
     Field Selection
     Using the field selection function, you can request to display a specific part of the data available for that object. While you query an object with many fields, you can specify the fields in your response. An object will have ‘Name’, ‘Surname’, ‘Birthdate’, ‘Email’, ‘Phone’ as its fields.
 
@@ -249,7 +249,86 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-13. ### References
+13. ### Use consistent error messages
+
+    In most cases, HTTP status codes are not enough to explain what went wrong.
+
+    To help your API consumers, include a structured JSON error message.
+
+    The response should include the following information:
+
+    Error code: A machine-readable error code that identifies the specific error condition.
+    Error message: A human-readable message that provides a detailed explanation of the error.
+    Error context: Additional information related to the error, such as the request ID, the request parameters that caused the error, or the field(s) in the request that caused the error.
+    Error links: URLs to resources or documentation that provide additional information about the error and how it can be resolved.
+    Timestamp: The time when the error occurred.
+
+14. ### Use Status Codes in Error Handling
+
+    You should always use regular HTTP status codes in responses to requests made to your API. This will help your users to know what is going on – whether the request is successful, or if it fails, or something else.
+
+    Below is a table showing different HTTP Status Code ranges and their meanings:
+
+    STATUS CODE RANGE MEANING
+    100 – 199 Informational Responses.
+    For example, 102 indicates the resource is being processed
+    300 – 399 Redirects
+    For example, 301 means Moved permanently
+    400 – 499 Client-side errors
+    400 means bad request and 404 means resource not found
+    500 – 599 Server-side errors
+    For example, 500 means an internal server error
+
+15. ### Use appropriate data structure
+
+    It's a common misconception that REST API must use JSON structure. But REST is all about a resource. That resource can be a JPEG image, HTML document, or any data structure.
+
+    Find out what works for you. A lot of company API guidelines force the use of JSON.
+
+    Valid JSON schema
+    If you use JSON, follow these best practices:
+
+    Valid JSON Schema should be used for both request and response bodies.
+    Include the "Content-Type" header set to "application/json" in all requests and responses when sending JSON data.
+    Use JSON even when communicating error messages. Don't just return plain text or HTML.
+
+16. ### Pick your JSON field naming convention (and stick to it)
+
+    JSON standard doesn't impose a field naming convention, but it's a best practice to pick one and stick with it.
+
+    Convention Description Example
+    snake_case Lowercase letters with underscores separating words "user_name"
+    camelCase
+    Lowercase first letter of first word, capitalizing the first letter of subsequent words
+
+    "userName"
+    PascalCase Capitalizing the first letter of each word "UserName"
+    kebab-case Lowercase letters with hyphens separating words "user-name"
+    camelCase and snake_case are the most common. I prefer camelCase and I don't recommend PascalCase or kebab-case.
+
+17. ### Version your APIs
+
+    Always attempt to version your APIs. You can provide an upgrade path without making any fundamental changes to the existing APIs by versioning your APIs. You can also let users know that updated versions of the API are accessible at the following fully-qualified URIs.
+
+    http://api.example.com/v1/store/employees/{emp-id}
+    Introduction in any major breaking update can be avoided with the following /v2.
+
+    http://api.example.com/v1/store/items/{item-id}
+    http://api.example.com/v2/store/employees/{emp-id}/address
+
+18. ### Consider applying a rate limit for API calls
+
+    Rate limiting is a technique for limiting the number of API requests that a client can make in a given time period.
+
+    The API response will usually include information about the rate limit and the client's current usage, so that the client can adjust its behavior accordingly.
+
+    A "429 Too Many Requests" HTTP status code and the "Retry-After" header are commonly used to enforce rate limits on API calls.
+
+    The 429 Too Many Requests error status code indicates that the user has sent too many requests in a given amount of time and the API has temporarily blocked further requests from that user.
+    The Retry-After header specifies the amount of time the user must wait before making additional requests.
+    The Retry-Remaining header specifies the count of remaining calls in the given time frame.
+
+19. ### References
 
     Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
 
