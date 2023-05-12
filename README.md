@@ -209,7 +209,47 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-12. ### References
+12. ### Use query component to filtering, sorting, paging, and field selection
+
+    As your database grows, managing it can become a daunting task, especially when it comes to retrieving specific data without exposing the entire database. To address this challenge, REST APIs offer four types of filtering options: filtering, sorting, paging, and field selection.
+
+    By leveraging these options, you can retrieve the necessary data efficiently and effectively, without compromising security or overloading the client's bandwidth.
+
+    Filtering
+    Using this you can filter results that satisfy your required conditions. You can use search parameters like country, creation, date and etc for this.
+
+    GET /users?country=UK
+    GET /users?creation_date=2021-10-11
+    GET /users?creation_date=2021-10-11
+
+    Sorting
+
+    You can sort your results in ascending and descending order using this option.
+
+    GET /users?sort=birthdate_date:asc
+    GET /users?sort=birthdate_date:desc
+
+    Paging
+    Using the ‘limit’ option, you can narrow down the results to the required number. You can also use ‘offset’ to show the part of the overall results displayed.
+
+    GET /users?limit=120
+    GET /users?offset=3
+    
+    Field Selection
+    Using the field selection function, you can request to display a specific part of the data available for that object. While you query an object with many fields, you can specify the fields in your response. An object will have ‘Name’, ‘Surname’, ‘Birthdate’, ‘Email’, ‘Phone’ as its fields.
+
+    For example, when you want to retrieve the birthdate and email to automate birthday wishes. You can use a query like this:
+
+    For a specific user:
+
+    GET/ users/123?fields=name,birthdate,email
+    For a full list of users:
+
+    GET/ users?fields=name,birthdate,email
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+13. ### References
 
     Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
 
