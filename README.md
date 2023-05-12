@@ -31,7 +31,6 @@
     <div  style="text-align: center;">
             <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
     <div>
-    
 
 2.  ### Use JSON as the Format for Sending and Receiving Data
 
@@ -157,9 +156,9 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-9.  ### Use sub-resource collections for relations
+9.  ### Use Nesting on Endpoints to Show Relationships
 
-    Sub-resources related to a collection of resources should be placed directly under a specific resource to show their connection. This makes sure the API design is well-organized with a clear structure and order.
+    Sometimes, API endpoints can have relationships with each other, and in those cases, it can be helpful to nest them for better clarity and understanding
 
     Here are a few examples to show how the endpoints should look like,
 
@@ -176,13 +175,13 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-10. ### Use top-level resources (when possible)
+10. ### Limit the nesting of resources to a reasonable level by using top-level resources
 
-    Limit the nesting of resources to a reasonable level in APIs. This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
+    This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
 
     Here are a few examples to show how the endpoints should look like,
 
-    | Correct                  | Incorrect                                |
+    | Do's                     | Don'ts                                   |
     | ------------------------ | ---------------------------------------- |
     | /api/comments/10/replies | /api/users/1/posts/5/comments/10/replies |
     | /api/posts/5/tags        | /api/users/1/posts/5/tags                |
@@ -192,7 +191,25 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-11. ### References
+11. ### Use forward slashes (/) for hierarchy but not trailing forward slash (/)
+
+    It is recommended to use forward slashes for indicating hierarchy, but not to use a trailing forward slash.
+
+    Here are a few examples to show how the endpoints should look like,
+
+    | Do's                        | Don'ts                               |
+    | --------------------------- | ------------------------------------ |
+    | POST /users                 | POST /user/                          |
+    | GET /users                  | GET /user/                           |
+    | GET /users/123              | GET /user/123/                       |
+    | PUT /users/123              | PUT /user/123/                       |
+    | PATCH /users/123            | PATCH /user/123/                     |
+    | DELETE /users/123           | DELETE /user/123/                    |
+    | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30/ |
+
+    **[⬆ Back to Top](#table-of-contents)**
+
+12. ### References
 
     Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
 
