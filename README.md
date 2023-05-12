@@ -23,26 +23,15 @@
 1.  ### Breakdown of the parts a URL
 
     <div  style="text-align: center;">
-            <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_path.png?raw=true" width="700" height="500">
+            <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_path.png?raw=true" width="700" height="300">
     <div>
 
-    Here are some examples of full path API URLs:
+    Here is an example of full path API URLs:
 
     <div  style="text-align: center;">
-            <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.png?raw=true" width="700" height="500">
+            <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
     <div>
-
-    - `https://www.example.com/api/users`
-    - `https://www.example.com/api/v1/users`
-    - `https://www.example.com/api/v1/users?limit=10&page=2`
-    - `https://www.example.com/api/v1/users/1`
-
-    With Port
-
-    - `https://www.example.com:8080/api/users`
-    - `https://www.example.com:8080/api/v1/users`
-    - `https://www.example.com:8080/api/v1/users?limit=10&page=2`
-    - `https://www.example.com:8080/api/v1/users/1`
+    
 
 2.  ### Use JSON as the Format for Sending and Receiving Data
 
