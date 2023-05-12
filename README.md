@@ -14,55 +14,35 @@
 
 ### Table of Contents
 
-| No. | Topic                                                  |
-| --- | ------------------------------------------------------ |
-| 1   | [What are Design Patterns?](#What-are-Design-Patterns) |
-| 2   | [Factory Design Pattern](#Factory-Design-Pattern)      |
+| No. | Topic                                                       |
+| --- | ----------------------------------------------------------- |
+| 1   | [Breakdown of the parts a URL](#Breakdown-of-the-parts-URL) |
+| 1   | [Breakdown of the parts a URL](#Breakdown-of-the-parts-URL) |
+| 2   | [Factory Design Pattern](#Factory-Design-Pattern)           |
 
-1.  ### breakdown of the parts a URL
+1.  ### Breakdown of the parts a URL
 
+    <div  style="text-align: center;">
+            <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_path.png?raw=true" width="700" height="500">
+    <div>
 
     Here are some examples of full path API URLs:
 
+    <div  style="text-align: center;">
+            <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.png?raw=true" width="700" height="500">
+    <div>
+
     - `https://www.example.com/api/users`
     - `https://www.example.com/api/v1/users`
-    - `https://www.example.com:8080/api/v1/users`
-    - `https://www.example.com:8080/api/v1/users/1`
     - `https://www.example.com/api/v1/users?limit=10&page=2`
+    - `https://www.example.com/api/v1/users/1`
 
+    With Port
 
-    Note that the domain name and port number will depend on the specific API implementation and hosting environment. The path may also include additional versioning information and query parameters as needed.
-
-
-    Here's the breakdown of the parts in the provided URI:
-
-    1. Protocol Scheme: `http` or `https`
-
-    - `http` or `https`: Not mentioned in the provided URI.
-
-    2. Domain Name: www.example.com
-
-    - `www.example.com: Not mentioned in the provided URI.
-
-    3. Base Path:
-
-    - Not mentioned in the provided URI.
-
-    4. Resource Path:
-
-    - `/api/users/1/roles`
-    - Description: Represents the resource path to access user roles associated with the user identified by the ID `1`.
-
-    5. Query Parameters:
-
-    - `sort_by=firstName_desc`
-    - Description: Query parameter used to specify the sorting order of the results. In this case, it indicates sorting by the `firstName` field in descending order.
-
-    6. Fragment Identifier:
-
-    - Not mentioned in the provided URI.
-
-    Please note that the breakdown provided above assumes a standard URI structure, and the actual names used may vary depending on the specific API design or organization.
+    - `https://www.example.com:8080/api/users`
+    - `https://www.example.com:8080/api/v1/users`
+    - `https://www.example.com:8080/api/v1/users?limit=10&page=2`
+    - `https://www.example.com:8080/api/v1/users/1`
 
 2.  ### Use JSON as the Format for Sending and Receiving Data
 
