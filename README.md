@@ -19,17 +19,30 @@
 | 1   | [What are Design Patterns?](#What-are-Design-Patterns) |
 | 2   | [Factory Design Pattern](#Factory-Design-Pattern)      |
 
-1.  ### breakdown of the parts in the provided URI
+1.  ### breakdown of the parts a URL
+
+
+    Here are some examples of full path API URLs:
+
+    - `https://www.example.com/api/users`
+    - `https://www.example.com/api/v1/users`
+    - `https://www.example.com:8080/api/v1/users`
+    - `https://www.example.com:8080/api/v1/users/1`
+    - `https://www.example.com/api/v1/users?limit=10&page=2`
+
+
+    Note that the domain name and port number will depend on the specific API implementation and hosting environment. The path may also include additional versioning information and query parameters as needed.
+
 
     Here's the breakdown of the parts in the provided URI:
 
-    1. Protocol Scheme:
+    1. Protocol Scheme: `http` or `https`
 
     - `http` or `https`: Not mentioned in the provided URI.
 
-    2. Domain Name:
+    2. Domain Name: www.example.com
 
-    - `api.example.com`: Not mentioned in the provided URI.
+    - `www.example.com: Not mentioned in the provided URI.
 
     3. Base Path:
 
