@@ -207,6 +207,11 @@ If a client makes an API request to retrieve a user profile and encounters an er
 
 Using proper status codes enhances the clarity of API responses and enables API consumers to understand the outcome of their requests accurately. It's essential to use these status codes consistently to ensure effective error handling and communication with API users.
 
+Reources :
+
+- [API Best Practices: Response Handling](http://blogs.mulesoft.com/api-best-practices-response-handling/)
+- [Error handling considerations and best practices](http://soabits.blogspot.ru/2013/05/error-handling-considerations-and-best.html)
+
 ## 15. Apply Rate Limit for API Calls
 
 Rate limiting is a vital mechanism to control the number of API requests a client can make within a specified time frame. By implementing rate limits, you can ensure fair usage of your API's resources and protect it from abuse or overloading. Here are key considerations for applying rate limits:
@@ -474,22 +479,9 @@ Many articles were followed and among them, certain articles proved to be highly
 - [How to design a REST API](http://blog.octo.com/en/design-a-rest-api/)
 - [Best Practices for Designing a Pragmatic RESTful API](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 - [White House Web API Standards](https://github.com/WhiteHouse/api-standards)
-- [10 Best Practices for Better RESTful API](http://blog.mwaysolutions.com/2014/06/05/10-best-practices-for-better-restful-api/)
 - [API design best practices](http://blogs.mulesoft.com/tag/series/)
-- [Создание RESTful API](http://anton.shevchuk.name/php/create-restful-api/)
-- [Шпаргалка по созданию RESTful API](http://noteskeeper.ru/1161/)
 
-## Errors and statuses
-
-- [API Best Practices: Response Handling](http://blogs.mulesoft.com/api-best-practices-response-handling/)
-- [RESTful API Design: what about errors?](https://blog.apigee.com/detail/restful_api_design_what_about_errors)
-- [Error handling considerations and best practices](http://soabits.blogspot.ru/2013/05/error-handling-considerations-and-best.html)
-
-## Pagination
-
-- [API pagination best practices](http://stackoverflow.com/questions/13872273/api-pagination-best-practices)
-
-## Examples
+## API Documentation Examples
 
 - [twitter](https://dev.twitter.com/rest/public)
 - [github](https://developer.github.com/v3/)
@@ -498,14 +490,11 @@ Many articles were followed and among them, certain articles proved to be highly
 - [vk](http://vk.com/dev/methods)
 - [pinterest](https://developers.pinterest.com/docs/api/overview/)
 
-## Tools
+## API Documentation and Testing Tools
 
 - [Swagger Framework for APIs](http://swagger.io/)
 - [apiDoc](http://apidocjs.com/)
-
-## Testing in a browser
-
-- [Postman для google chrome](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop)
+- [postman](https://www.postman.com/)
 
 ## License
 
