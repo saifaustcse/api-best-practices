@@ -10,7 +10,7 @@
 
 > Find me if you wish [saif](https://www.linkedin.com/in/saif-aust-cse/).
 
-### Table of Contents
+## Table of Contents
 
 | No. | Topic                                                       |
 | --- | ----------------------------------------------------------- |
@@ -18,9 +18,34 @@
 | 1   | [Breakdown of the parts a URL](#Breakdown-of-the-parts-URL) |
 | 2   | [Factory Design Pattern](#Factory-Design-Pattern)           |
 
-What is REST API?
-
 ## 1. What is REST API?
+
+REST API is an API that follows a set of rules for an application and services to communicate with each other. As it is constrained to REST architecture, REST API is referred to as RESTful API. REST APIs provide a way of accessing web services in a flexible way without massive processing capabilities.
+
+<div  style="text-align: center;">
+        <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/rest-api-model.png?raw=true" width="700" height="300">
+<div>
+
+REST API standards
+The REST API standards are a must-follow for all the REST APIs. The REST API standards have a list of constraints to abide by. These constraints are explained below.
+
+1. Statelessness
+   Systems aligning with the REST paradigm are bound to become stateless. For Client-Server communication, stateless constraint enforces servers to remain unaware of the client state and vice-versa. A constraint is applied by using resources instead of commands, and they are nouns of the web that describe any object, document, or thing to store/send to other resources.
+
+2. Cacheable
+   Cache helps servers to mitigate some constraints of statelessness. It is a critical factor that has improved the performance of modern web applications. Caching not only enhances the performance on the client-side but also scales significant results on the server-side. A well-established cache mechanism would drastically reduce the average response time of your server.
+
+3. Decoupled
+   REST is a distributed approach, where client and server applications are decoupled from each other. Irrespective of where the requests are initiated, the only information the client application knows is the Uniform Resource Identifier (URI) of the requested resource. A server application should pass requested data via HTTP but should not try modifying the client application.
+
+4. Layered System
+   A Layered system makes a REST architecture scalable. With RESTful architecture, Client and Server applications are decoupled, so the calls and responses of REST APIs go through different layers. As REST API is layered, it should be designed such that neither Client nor Server identifies its communication with end applications or an intermediary.
+
+5. Client-Server
+   The client and server applications must be able to function without the help of each other. Both the server application and the client application must abide by the separation of concerns agreement. By this agreement, when altering the client end, there should not be any impact on the server application. And also, when the code of the server is altered, it should not affect the client end. This enhances the scalability and flexibility of the interface across platforms.
+
+6. Code on demand (optional)
+   Of all the constraints, this one is optional. The usual format used while sending resources is JSON REST API or XML. But whenever it is required, you are provided with an option to return executable code. This will support the main part of your application.
 
 ## 2. Breakdown of the parts a URL
 
