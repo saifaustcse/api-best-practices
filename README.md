@@ -10,56 +10,31 @@
 
 > Find me if you wish [saif](https://www.linkedin.com/in/saif-aust-cse/).
 
-## Table of Contents
-
-1. [What is REST API?](#1-what-is-rest-api)
-2. [Breakdown of the parts a URL](#2-breakdown-of-the-parts-a-url)
-3. [Use HTTP methods to communicate intent](#3-use-http-methods-to-communicate-intent)
-4. [Use Appropriate Data Structure](#4-use-appropriate-data-structure)
-5. [Pick your JSON Field Naming Convention (and Stick to It)](#5-pick-your-json-field-naming-convention-and-stick-to-it)
-6. [Use Consistent Error Messages](#6-use-consistent-error-messages)
-7. [Use Status Codes in Error Handling](#7-use-status-codes-in-error-handling)
-8. [Apply Rate Limit for API Calls](#8-apply-rate-limit-for-api-calls)
-9. [Do not use verbs in the URI](#9-do-not-use-verbs-in-the-uri)
-10. [Use Plural nouns](#10-use-plural-nouns)
-11. [Use Lowercase letters](#11-use-lowercase-letters)
-12. [Use hyphens (-) to separate words or segments in the URI path](#12-use-hyphens--to-separate-words-or-segments-in-the-uri-path)
-13. [Use Underscore (\_) separate query strings in the URI path](#13-use-underscore--separate-query-strings-in-the-uri-path)
-14. [Use Nesting on Endpoints to Show Relationships](#14-use-nesting-on-endpoints-to-show-relationships)
-15. [Limit the nesting of resources to a reasonable level by using top-level resources](#15-limit-the-nesting-of-resources-to-a-reasonable-level-by-using-top-level-resources)
-16. [Use forward slashes (/) for hierarchy but not trailing forward slash (/)](#16-use-forward-slashes--for-hierarchy-but-not-trailing-forward-slash-)
-17. [Use Query Component for Filtering, Sorting, Paging, and Field Selection](#17-use-query-component-for-filtering-sorting-paging-and-field-selection)
-18. [Version Your APIs](#18-version-your-apis)
-19. [References](#references)
-
 ## 1. What is REST API?
 
-REST API is an API that follows a set of rules for an application and services to communicate with each other. As it is constrained to REST architecture, REST API is referred to as RESTful API. REST APIs provide a way of accessing web services in a flexible way without massive processing capabilities.
+A REST API is an application programming interface that adheres to a specific set of rules, enabling seamless communication between applications and services. By adhering to the principles of REST architecture, it becomes known as a RESTful API. REST APIs offer a flexible means of accessing web services without requiring extensive processing capabilities.
 
 <div  style="text-align: center;">
         <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/rest-api-model.png?raw=true" width="700" height="300">
 <div>
 
-REST API standards
+**REST API standards :**
+
 The REST API standards are a must-follow for all the REST APIs. The REST API standards have a list of constraints to abide by. These constraints are explained below.
 
-1. Statelessness
-   Systems aligning with the REST paradigm are bound to become stateless. For Client-Server communication, stateless constraint enforces servers to remain unaware of the client state and vice-versa. A constraint is applied by using resources instead of commands, and they are nouns of the web that describe any object, document, or thing to store/send to other resources.
+1. **Statelessness:** Each request must contain all necessary information, and the server does not store client-specific data between requests. This simplifies the server's architecture and improves scalability.
 
-2. Cacheable
-   Cache helps servers to mitigate some constraints of statelessness. It is a critical factor that has improved the performance of modern web applications. Caching not only enhances the performance on the client-side but also scales significant results on the server-side. A well-established cache mechanism would drastically reduce the average response time of your server.
+2. **Cacheability:** Responses can be cached to improve performance and reduce server load. Caching is controlled through cache directives in response headers.
 
-3. Decoupled
-   REST is a distributed approach, where client and server applications are decoupled from each other. Irrespective of where the requests are initiated, the only information the client application knows is the Uniform Resource Identifier (URI) of the requested resource. A server application should pass requested data via HTTP but should not try modifying the client application.
+3. **Decoupled Architecture:** The client and server are independent, and the client accesses resources through standardized HTTP methods and URIs. This promotes flexibility and allows different clients to interact with the same server.
 
-4. Layered System
-   A Layered system makes a REST architecture scalable. With RESTful architecture, Client and Server applications are decoupled, so the calls and responses of REST APIs go through different layers. As REST API is layered, it should be designed such that neither Client nor Server identifies its communication with end applications or an intermediary.
+4. **Layered System:** RESTful APIs can be organized into multiple layers, each with specific responsibilities. This enables separation of concerns and easy modification or addition of layers.
 
-5. Client-Server
-   The client and server applications must be able to function without the help of each other. Both the server application and the client application must abide by the separation of concerns agreement. By this agreement, when altering the client end, there should not be any impact on the server application. And also, when the code of the server is altered, it should not affect the client end. This enhances the scalability and flexibility of the interface across platforms.
+5. **Client-Server Model:** The client and server have distinct roles, with the client responsible for the user interface and the server handling data and logic. This separation simplifies client development and server scalability.
 
-6. Code on demand (optional)
-   Of all the constraints, this one is optional. The usual format used while sending resources is JSON REST API or XML. But whenever it is required, you are provided with an option to return executable code. This will support the main part of your application.
+6. **Code on Demand (Optional):** An optional feature allowing the server to extend client functionality by sending executable code. However, this feature is rarely used due to security concerns.
+
+Adhering to these standards ensures the creation of efficient, scalable, and maintainable RESTful APIs that provide a consistent experience for clients.
 
 ## 2. Breakdown of the parts a URL
 
@@ -72,8 +47,6 @@ Here is an example of full path API URLs:
 <div  style="text-align: center;">
         <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
 <div>
-
-**[⬆ Back to Top](#table-of-contents)**
 
 ## 3. Use HTTP methods to communicate intent
 
@@ -93,8 +66,6 @@ The following table helps you in understanding the REST API Verbs:
 Reources :
 
 - [PATCH vs PUT in REST API ](https://josipmisko.com/posts/patch-vs-put-rest-api) Differences between PATCH and PUT
-
-**[⬆ Back to Top](#table-of-contents)**
 
 ## 4. Use Appropriate Data Structure
 
@@ -133,8 +104,6 @@ Find out what works for you. A lot of company API guidelines force the use of JS
 ```
 
 By using JSON for both the request payload and the response, the API ensures a standardized data format and efficient data exchange between the client and the server.
-
-**[⬆ Back to Top](#table-of-contents)**
 
 ## 5. Pick your JSON Field Naming Convention (and Stick to It)
 
@@ -200,8 +169,6 @@ A well-formed error message should consist of the following components:
 
 In this example, the structured JSON error message provides clear information about the encountered error, including an error code, a detailed error message, relevant context data, links for further assistance, and the timestamp of the occurrence. By consistently using such error messages, API developers can greatly improve the error handling experience for consumers.
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## 4. Use Status Codes in Error Handling
 
 In API development, employing appropriate HTTP status codes in your responses is crucial for clear and effective communication with API consumers. Status codes provide essential information about the outcome of a request, indicating whether it was successful, encountered an error, or requires redirection. Below are different HTTP status code ranges and their respective meanings:
@@ -232,8 +199,6 @@ Reources :
 - [API Best Practices: Response Handling](http://blogs.mulesoft.com/api-best-practices-response-handling/)
 - [Error handling considerations and best practices](http://soabits.blogspot.ru/2013/05/error-handling-considerations-and-best.html)
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## 5. Apply Rate Limit for API Calls
 
 Rate limiting is a vital mechanism to control the number of API requests a client can make within a specified time frame. By implementing rate limits, you can ensure fair usage of your API's resources and protect it from abuse or overloading. Here are key considerations for applying rate limits:
@@ -256,8 +221,6 @@ Rate limiting is a vital mechanism to control the number of API requests a clien
 
 Rate limiting is a crucial aspect of API management, ensuring a balanced and fair distribution of resources among all users. It helps maintain API stability, reliability, and performance, providing a positive experience for all consumers.
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## 6. Do not use verbs in the URI
 
 Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
@@ -272,8 +235,6 @@ Here are a few examples to show how the endpoints should look like,
 | PUT /users/1    | PUT /updateUser/1    |
 | PATCH /users/1  | PATCH /modifyUser/1  |
 | DELETE /users/1 | DELETE /deleteUser/1 |
-
-**[⬆ Back to Top](#table-of-contents)**
 
 ## 7. Use Plural nouns
 
@@ -291,8 +252,6 @@ Here are a few examples to show how the endpoints should look like,
 | DELETE /users/123           | DELETE /user/123                    |
 | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30 |
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## 8. Use Lowercase letters
 
 URIs should start with a letter and use only lowercase letters.
@@ -304,8 +263,6 @@ Here are a few examples to show how the endpoints should look like,
 | GET /users | GET /getAllUsers |
 | GET /users | GET /GetAllUsers |
 | GET /users | GET /USERS       |
-
-**[⬆ Back to Top](#table-of-contents)**
 
 ## 9. Use hyphens (-) to separate words or segments in the URI path
 
@@ -328,8 +285,6 @@ Here are a few examples to show how the endpoints should look like,
 | /user-roles/123 | /user roles/123   |
 | /user-roles/123 | /user%20roles/123 |
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## 10. Use Underscore (\_) separate query strings in the URI path
 
 literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
@@ -342,8 +297,6 @@ Here are a few examples to show how the endpoints should look like,
 | /api/users?filter_by=active           | /api/users?filterBy=active          |
 | /api/users?page_size=10&page_number=2 | /api/users?pageSize=10&pageNumber=2 |
 | /api/users?search_query=john          | /api/users?searchQuery=john         |
-
-**[⬆ Back to Top](#table-of-contents)**
 
 ## 11. Use Nesting on Endpoints to Show Relationships
 
@@ -362,8 +315,6 @@ Here are a few examples to show how the endpoints should look like,
 | /api/posts/5/comments    | /api/users/1/posts/5/comments    |
 | /api/posts/5/comments/10 | /api/users/1/posts/5/comments/10 |
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## 12. Limit the nesting of resources to a reasonable level by using top-level resources
 
 This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
@@ -377,8 +328,6 @@ Here are a few examples to show how the endpoints should look like,
 | /api/comments/10/likes   | /api/users/1/posts/5/comments/10/likes   |
 | /api/posts/5/author      | /api/users/1/posts/5/author              |
 | /api/users/1/followers   | /api/users/1/posts/5/author/followers    |
-
-**[⬆ Back to Top](#table-of-contents)**
 
 ## 13. Use forward slashes (/) for hierarchy but not trailing forward slash (/)
 
@@ -395,8 +344,6 @@ Here are a few examples to show how the endpoints should look like,
 | PATCH /users/123            | PATCH /user/123/                     |
 | DELETE /users/123           | DELETE /user/123/                    |
 | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30/ |
-
-**[⬆ Back to Top](#table-of-contents)**
 
 ## 14. Use Query Component for Filtering, Sorting, Paging, and Field Selection
 
@@ -443,8 +390,6 @@ Example queries:
 
 By utilizing these query options, your API becomes more flexible and user-friendly, enabling clients to retrieve precisely the data they need with minimal overhead. It's essential to document these query parameters to guide API consumers effectively.
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## 15. Version Your APIs
 
 Versioning your APIs is crucial for providing a smooth upgrade path and maintaining backward compatibility when making changes. It ensures that clients can adapt to new features and improvements without disrupting existing functionality. Here are some best practices for versioning your APIs:
@@ -475,8 +420,6 @@ Versioning your APIs is crucial for providing a smooth upgrade path and maintain
 
 By following these versioning practices, you can provide a stable and reliable API experience for your users while continuously improving and evolving your API without disrupting their existing integrations.
 
-**[⬆ Back to Top](#table-of-contents)**
-
 <!-- ## 16. References
 
 Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
@@ -497,8 +440,6 @@ Many articles were followed and among them, certain articles proved to be highly
 <!-- - [Learn REST: A RESTful Tutorial](http://www.restapitutorial.com/)
 - [White House Web API Standards](https://github.com/WhiteHouse/api-standards) -->
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## API Documentation Examples
 
 - [twitter](https://dev.twitter.com/rest/public)
@@ -508,17 +449,11 @@ Many articles were followed and among them, certain articles proved to be highly
 - [pinterest](https://developers.pinterest.com/docs/api/overview/)
 - [apiDoc](http://apidocjs.com/)
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## API Documentation and Testing Tools
 
 - [Swagger Framework for APIs](http://swagger.io/)
 - [postman](https://www.postman.com/)
 
-**[⬆ Back to Top](#table-of-contents)**
-
 ## License
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-**[⬆ Back to Top](#table-of-contents)**
