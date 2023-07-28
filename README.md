@@ -471,22 +471,17 @@ Many articles were followed and among them, certain articles proved to be highly
 
 - [stackoverflow](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
 - [Microsoft REST API Guidelines](https://github.com/Microsoft/api-guidelines/)
-- [twitter](https://developer.twitter.com/en/docs/api-reference-index)
 - [Learn REST: A RESTful Tutorial](http://www.restapitutorial.com/)
 - [How to design a REST API](http://blog.octo.com/en/design-a-rest-api/)
 - [Best Practices for Designing a Pragmatic RESTful API](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 - [White House Web API Standards](https://github.com/WhiteHouse/api-standards)
-- [API design best practices](http://blogs.mulesoft.com/tag/series/)
 
 ## API Documentation Examples
 
-- [apidocjs](https://apidocjs.com/example/)
 - [twitter](https://dev.twitter.com/rest/public)
 - [github](https://docs.github.com/en)
-- [github](https://developer.github.com/v3/)
 - [instagram](https://instagram.com/developer/endpoints/)
 - [facebook](https://developers.facebook.com/docs/graph-api/using-graph-api/)
-- [vk](http://vk.com/dev/methods)
 - [pinterest](https://developers.pinterest.com/docs/api/overview/)
 
 ## API Documentation and Testing Tools
