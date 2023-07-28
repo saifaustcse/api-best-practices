@@ -130,7 +130,7 @@ When working with JSON data, it's important to establish a consistent field nami
 
 Out of these conventions, **camelCase** and **snake_case** are the most widely used and recommended. For consistency, it's best to choose one of these conventions and use it throughout your JSON data structures.
 
-## 3. Use Consistent Error Messages
+## 6. Use Consistent Error Messages
 
 In API development, relying solely on HTTP status codes to convey error information may not be sufficient for effective error handling. To provide better support for API consumers, it is recommended to include structured JSON error messages in the API responses.
 
@@ -169,7 +169,7 @@ A well-formed error message should consist of the following components:
 
 In this example, the structured JSON error message provides clear information about the encountered error, including an error code, a detailed error message, relevant context data, links for further assistance, and the timestamp of the occurrence. By consistently using such error messages, API developers can greatly improve the error handling experience for consumers.
 
-## 4. Use Status Codes in Error Handling
+## 7. Use Status Codes in Error Handling
 
 In API development, employing appropriate HTTP status codes in your responses is crucial for clear and effective communication with API consumers. Status codes provide essential information about the outcome of a request, indicating whether it was successful, encountered an error, or requires redirection. Below are different HTTP status code ranges and their respective meanings:
 
@@ -199,7 +199,7 @@ Reources :
 - [API Best Practices: Response Handling](http://blogs.mulesoft.com/api-best-practices-response-handling/)
 - [Error handling considerations and best practices](http://soabits.blogspot.ru/2013/05/error-handling-considerations-and-best.html)
 
-## 5. Apply Rate Limit for API Calls
+## 8. Apply Rate Limit for API Calls
 
 Rate limiting is a vital mechanism to control the number of API requests a client can make within a specified time frame. By implementing rate limits, you can ensure fair usage of your API's resources and protect it from abuse or overloading. Here are key considerations for applying rate limits:
 
@@ -221,7 +221,7 @@ Rate limiting is a vital mechanism to control the number of API requests a clien
 
 Rate limiting is a crucial aspect of API management, ensuring a balanced and fair distribution of resources among all users. It helps maintain API stability, reliability, and performance, providing a positive experience for all consumers.
 
-## 6. Do not use verbs in the URI
+## 9. Do not use verbs in the URI
 
 Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
 
@@ -236,7 +236,7 @@ Here are a few examples to show how the endpoints should look like,
 | PATCH /users/1  | PATCH /modifyUser/1  |
 | DELETE /users/1 | DELETE /deleteUser/1 |
 
-## 7. Use Plural nouns
+## 10. Use Plural nouns
 
 Use plural when possible unless they are singleton resources.
 
@@ -252,7 +252,7 @@ Here are a few examples to show how the endpoints should look like,
 | DELETE /users/123           | DELETE /user/123                    |
 | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30 |
 
-## 8. Use Lowercase letters
+## 11. Use Lowercase letters
 
 URIs should start with a letter and use only lowercase letters.
 
@@ -264,7 +264,7 @@ Here are a few examples to show how the endpoints should look like,
 | GET /users | GET /GetAllUsers |
 | GET /users | GET /USERS       |
 
-## 9. Use hyphens (-) to separate words or segments in the URI path
+## 12. Use hyphens (-) to separate words or segments in the URI path
 
 Avoid using underscores, camel case, Pascal case, spaces, special characters in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
 
@@ -285,7 +285,7 @@ Here are a few examples to show how the endpoints should look like,
 | /user-roles/123 | /user roles/123   |
 | /user-roles/123 | /user%20roles/123 |
 
-## 10. Use Underscore (\_) separate query strings in the URI path
+## 13. Use Underscore (\_) separate query strings in the URI path
 
 literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
 
@@ -298,7 +298,7 @@ Here are a few examples to show how the endpoints should look like,
 | /api/users?page_size=10&page_number=2 | /api/users?pageSize=10&pageNumber=2 |
 | /api/users?search_query=john          | /api/users?searchQuery=john         |
 
-## 11. Use Nesting on Endpoints to Show Relationships
+## 14. Use Nesting on Endpoints to Show Relationships
 
 Sometimes, API endpoints can have relationships with each other, and in those cases, it can be helpful to nest them for better clarity and understanding
 
@@ -315,7 +315,7 @@ Here are a few examples to show how the endpoints should look like,
 | /api/posts/5/comments    | /api/users/1/posts/5/comments    |
 | /api/posts/5/comments/10 | /api/users/1/posts/5/comments/10 |
 
-## 12. Limit the nesting of resources to a reasonable level by using top-level resources
+## 15. Limit the nesting of resources to a reasonable level by using top-level resources
 
 This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
 
@@ -329,7 +329,7 @@ Here are a few examples to show how the endpoints should look like,
 | /api/posts/5/author      | /api/users/1/posts/5/author              |
 | /api/users/1/followers   | /api/users/1/posts/5/author/followers    |
 
-## 13. Use forward slashes (/) for hierarchy but not trailing forward slash (/)
+## 16. Use forward slashes (/) for hierarchy but not trailing forward slash (/)
 
 It is recommended to use forward slashes for indicating hierarchy, but not to use a trailing forward slash.
 
@@ -345,7 +345,7 @@ Here are a few examples to show how the endpoints should look like,
 | DELETE /users/123           | DELETE /user/123/                    |
 | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30/ |
 
-## 14. Use Query Component for Filtering, Sorting, Paging, and Field Selection
+## 17. Use Query Component for Filtering, Sorting, Paging, and Field Selection
 
 As your database grows, managing data retrieval can become challenging, especially when you need to retrieve specific data without exposing the entire database. REST APIs provide four types of filtering options: filtering, sorting, paging, and field selection, enabling efficient data retrieval without compromising security or overwhelming the client's bandwidth.
 
@@ -390,7 +390,7 @@ Example queries:
 
 By utilizing these query options, your API becomes more flexible and user-friendly, enabling clients to retrieve precisely the data they need with minimal overhead. It's essential to document these query parameters to guide API consumers effectively.
 
-## 15. Version Your APIs
+## 18. Version Your APIs
 
 Versioning your APIs is crucial for providing a smooth upgrade path and maintaining backward compatibility when making changes. It ensures that clients can adapt to new features and improvements without disrupting existing functionality. Here are some best practices for versioning your APIs:
 
