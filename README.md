@@ -182,6 +182,31 @@ If a client makes an API request to retrieve a user profile and encounters an er
 
 Using proper status codes enhances the clarity of API responses and enables API consumers to understand the outcome of their requests accurately. It's essential to use these status codes consistently to ensure effective error handling and communication with API users.
 
+
+## 15. Apply Rate Limit for API Calls
+
+Rate limiting is a vital mechanism to control the number of API requests a client can make within a specified time frame. By implementing rate limits, you can ensure fair usage of your API's resources and protect it from abuse or overloading. Here are key considerations for applying rate limits:
+
+1. **Set Rate Limit Information in API Response:**
+
+   When a client makes a request, include rate limit information in the API response. This typically includes details like the total number of requests allowed within a specific time window, the remaining requests available, and the time period until the limits reset.
+
+2. **Use "429 Too Many Requests" Status Code:**
+
+   To indicate that a client has exceeded its rate limit, return the "429 Too Many Requests" HTTP status code. This informs the client that further requests are temporarily blocked.
+
+3. **Utilize "Retry-After" Header:**
+
+   Include the "Retry-After" header in the response to specify the time duration the client should wait before making additional requests. This helps the client to adjust its behavior and avoid overloading the API.
+
+4. **Consider "Retry-Remaining" Header:**
+
+   Optionally, use the "Retry-Remaining" header to indicate the count of remaining calls available to the client within the given time frame. This can help the client keep track of its usage and plan accordingly.
+
+Rate limiting is a crucial aspect of API management, ensuring a balanced and fair distribution of resources among all users. It helps maintain API stability, reliability, and performance, providing a positive experience for all consumers.
+
+**[⬆ Back to Top](#table-of-contents)**
+
 ## 5. Do not use verbs in the URI
 
 Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
@@ -369,44 +394,55 @@ By utilizing these query options, your API becomes more flexible and user-friend
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 14. Version your APIs
+## 14. Version Your APIs
 
-    Always attempt to version your APIs. You can provide an upgrade path without making any fundamental changes to the existing APIs by versioning your APIs. You can also let users know that updated versions of the API are accessible at the following fully-qualified URIs.
+Versioning your APIs is crucial for providing a smooth upgrade path and maintaining backward compatibility when making changes. It ensures that clients can adapt to new features and improvements without disrupting existing functionality. Here are some best practices for versioning your APIs:
 
-    http://api.example.com/v1/store/employees/{emp-id}
-    Introduction in any major breaking update can be avoided with the following /v2.
+1. **Use URL Versioning:**
 
-    http://api.example.com/v1/store/items/{item-id}
-    http://api.example.com/v2/store/employees/{emp-id}/address
+   Incorporate the API version directly into the URL to distinguish different versions. For example:
 
-## 15. Consider applying a rate limit for API calls
+   - `http://api.example.com/v1/store/employees/{emp-id}`
+   - `http://api.example.com/v1/store/items/{item-id}`
+   - `http://api.example.com/v2/store/employees/{emp-id}/address`
 
-    Rate limiting is a technique for limiting the number of API requests that a client can make in a given time period.
+2. **API Documentation:**
 
-    The API response will usually include information about the rate limit and the client's current usage, so that the client can adjust its behavior accordingly.
+   Clearly document each API version, specifying the changes, additions, and deprecations introduced in each version. This helps users understand the differences and plan for migration.
 
-    A "429 Too Many Requests" HTTP status code and the "Retry-After" header are commonly used to enforce rate limits on API calls.
+3. **Semantic Versioning:**
 
-    The 429 Too Many Requests error status code indicates that the user has sent too many requests in a given amount of time and the API has temporarily blocked further requests from that user.
-    The Retry-After header specifies the amount of time the user must wait before making additional requests.
-    The Retry-Remaining header specifies the count of remaining calls in the given time frame.
+   Consider adopting Semantic Versioning (SemVer) to indicate the extent of changes in each API version. SemVer follows the format of `MAJOR.MINOR.PATCH`, where:
+
+   - `MAJOR` version is incremented for incompatible changes.
+   - `MINOR` version is incremented for backward-compatible additions.
+   - `PATCH` version is incremented for backward-compatible bug fixes.
+
+4. **Deprecation Policy:**
+
+   Clearly communicate the deprecation policy for older API versions, informing users when a version will no longer be supported. This allows clients to plan their migration to the latest version.
+
+By following these versioning practices, you can provide a stable and reliable API experience for your users while continuously improving and evolving your API without disrupting their existing integrations.
+
+**[⬆ Back to Top](#table-of-contents)**
+
 
 ## 16. References
 
-    Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
+Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
 
-    - [medium](https://medium.com/@nadinCodeHat/rest-api-naming-conventions-and-best-practices-1c4e781eb6a5)
-    - [freecodecamp](https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/)
-    - [josipmisko](https://josipmisko.com/posts/rest-api-best-practices)
-    - [hevodata](https://hevodata.com/learn/rest-api-best-practices/)
-    - [partech](https://www.partech.nl/nl/publicaties/2020/07/9-trending-best-practices-for-rest-api-development#)
-    - [stackoverflow](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
-    - [twitter](https://developer.twitter.com/en/docs/api-reference-index)
-    - [apidocjs](https://apidocjs.com/example/)
-    - [github](https://docs.github.com/en)
-    - [github](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)
+- [medium](https://medium.com/@nadinCodeHat/rest-api-naming-conventions-and-best-practices-1c4e781eb6a5)
+- [freecodecamp](https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/)
+- [josipmisko](https://josipmisko.com/posts/rest-api-best-practices)
+- [hevodata](https://hevodata.com/learn/rest-api-best-practices/)
+- [partech](https://www.partech.nl/nl/publicaties/2020/07/9-trending-best-practices-for-rest-api-development#)
+- [stackoverflow](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
+- [twitter](https://developer.twitter.com/en/docs/api-reference-index)
+- [apidocjs](https://apidocjs.com/example/)
+- [github](https://docs.github.com/en)
+- [github](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)
 
-    **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 ## Good Practices
 
