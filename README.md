@@ -464,18 +464,15 @@ Many articles were followed and among them, certain articles proved to be highly
 - [josipmisko](https://josipmisko.com/posts/rest-api-best-practices)
 - [hevodata](https://hevodata.com/learn/rest-api-best-practices/)
 - [partech](https://www.partech.nl/nl/publicaties/2020/07/9-trending-best-practices-for-rest-api-development#)
-- [stackoverflow](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
-- [twitter](https://developer.twitter.com/en/docs/api-reference-index)
-- [apidocjs](https://apidocjs.com/example/)
-- [github](https://docs.github.com/en)
-- [github](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md)
 
 **[⬆ Back to Top](#table-of-contents)**
 
 ## Good Practices
 
+- [stackoverflow](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
 - [Microsoft REST API Guidelines](https://github.com/Microsoft/api-guidelines/)
-- [Learn REST: A RESTful Tutorial](http://www.restapitutorial.com/) и [книга](https://github.com/tfredrich/RestApiTutorial.com/raw/master/media/RESTful%20Best%20Practices-v1_2.pdf) по мотивам сайта
+- [twitter](https://developer.twitter.com/en/docs/api-reference-index)
+- [Learn REST: A RESTful Tutorial](http://www.restapitutorial.com/)
 - [How to design a REST API](http://blog.octo.com/en/design-a-rest-api/)
 - [Best Practices for Designing a Pragmatic RESTful API](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 - [White House Web API Standards](https://github.com/WhiteHouse/api-standards)
@@ -483,7 +480,9 @@ Many articles were followed and among them, certain articles proved to be highly
 
 ## API Documentation Examples
 
+- [apidocjs](https://apidocjs.com/example/)
 - [twitter](https://dev.twitter.com/rest/public)
+- [github](https://docs.github.com/en)
 - [github](https://developer.github.com/v3/)
 - [instagram](https://instagram.com/developer/endpoints/)
 - [facebook](https://developers.facebook.com/docs/graph-api/using-graph-api/)
