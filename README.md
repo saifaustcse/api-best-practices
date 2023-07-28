@@ -8,9 +8,7 @@
 
 > If you find this documentation helpful for learning , please give it a star. Your support is appreciated!
 
-## Find me
-
-> Find me if you wish [@Saif(https://www.linkedin.com/in/saif-aust-cse/).
+> Find me if you wish [saif](https://www.linkedin.com/in/saif-aust-cse/).
 
 ### Table of Contents
 
@@ -19,6 +17,10 @@
 | 1   | [Breakdown of the parts a URL](#Breakdown-of-the-parts-URL) |
 | 1   | [Breakdown of the parts a URL](#Breakdown-of-the-parts-URL) |
 | 2   | [Factory Design Pattern](#Factory-Design-Pattern)           |
+
+What is REST API?
+
+1.  ### What is REST API?
 
 1.  ### Breakdown of the parts a URL
 
@@ -32,21 +34,44 @@
             <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
     <div>
 
-2.  ### Use JSON as the Format for Sending and Receiving Data
+1.  ### Use JSON as the Format for Sending and Receiving Data
 
-    In modern API development, JSON (JavaScript Object Notation) has become the standard format for sending and receiving data. It has largely replaced XML and HTML due to its simplicity and widespread support.
+- REST APIs can use various data structures, not limited to JSON. Resources can be images, HTML documents, or any other data format.
+- JSON is commonly used in many company API guidelines due to its popularity and widespread support.
+- When using JSON, adhere to best practices:
+  - Use valid JSON Schema for both request and response bodies to ensure consistency and data validation.
+  - Set the "Content-Type" header to "application/json" in all API requests and responses involving JSON data.
+  - Utilize JSON even for error messages, avoiding plain text or HTML responses.
 
-    JSON is widely supported by programming languages such as JavaScript, Python, and PHP. These languages provide built-in methods for parsing and manipulating JSON data. For example, Python has json.loads() and json.dumps() for working with JSON.
+Here's an example of a simple API that accepts JSON payloads in requests and returns JSON in responses:
 
-    When sending JSON data in an API response, it's important to set the Content-Type header to `application/json`. This ensures that the client interprets the data correctly.
+**API Endpoint:** `/user`
 
-    In server-side frameworks like Express, setting the Content-Type header is often handled automatically. Express provides the express.json() middleware specifically for parsing JSON data in the request body. Alternatively, the body-parser NPM package can be used for the same purpose.
+**Method:** POST
 
-    By using JSON as the data format and setting the appropriate Content-Type header, API developers can ensure efficient and reliable data transmission between clients and servers.
+**Description:** This API allows clients to create a new user by sending a JSON payload in the request. The API will then return a JSON response containing the details of the newly created user.
 
-    The rewritten information focuses on the benefits of using JSON, highlights the support in various programming languages, and explains the importance of setting the Content-Type header. It also provides specific examples for working with JSON in Python and mentions popular server-side frameworks like Express.
+    **Request Payload:**
 
-    **[⬆ Back to Top](#table-of-contents)**
+    {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "age": 30
+    }
+
+    **Response:**
+
+    {
+    "id": "123456789",
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "age": 30,
+    "createdAt": "2023-07-19T12:34:56Z"
+    }
+
+    In this example, the client sends a JSON payload with the user's name, email, and age in the request. The server processes the request, creates a new user, and responds with a JSON object containing the newly created user's details, including an automatically generated `id` and `createdAt` timestamp.
+
+    By using JSON for both the request payload and the response, the API ensures a standardized data format and efficient data exchange between the client and the server.
 
 3.  ### Use HTTP methods to communicate intent
 
@@ -69,7 +94,34 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-4.  ### Do not use verbs in the URI
+4.  ### Use appropriate data structure
+
+    It's a common misconception that REST API must use JSON structure. But REST is all about a resource. That resource can be a JPEG image, HTML document, or any data structure.
+
+    Find out what works for you. A lot of company API guidelines force the use of JSON.
+
+    Valid JSON schema
+    If you use JSON, follow these best practices:
+
+    Valid JSON Schema should be used for both request and response bodies.
+    Include the "Content-Type" header set to "application/json" in all requests and responses when sending JSON data.
+    Use JSON even when communicating error messages. Don't just return plain text or HTML.
+
+5.  ### Pick your JSON field naming convention (and stick to it)
+
+    JSON standard doesn't impose a field naming convention, but it's a best practice to pick one and stick with it.
+
+    Convention Description Example
+    snake_case Lowercase letters with underscores separating words "user_name"
+    camelCase
+    Lowercase first letter of first word, capitalizing the first letter of subsequent words
+
+    "userName"
+    PascalCase Capitalizing the first letter of each word "UserName"
+    kebab-case Lowercase letters with hyphens separating words "user-name"
+    camelCase and snake_case are the most common. I prefer camelCase and I don't recommend PascalCase or kebab-case.
+
+6.  ### Do not use verbs in the URI
 
     Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
 
@@ -86,7 +138,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-5.  ### Use Plural nouns
+7.  ### Use Plural nouns
 
     Use plural when possible unless they are singleton resources.
 
@@ -104,7 +156,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-6.  ### Use Lowercase letters
+8.  ### Use Lowercase letters
 
     URIs should start with a letter and use only lowercase letters.
 
@@ -118,7 +170,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-7.  ### Use hyphens (-) to separate words or segments in the URI path
+9.  ### Use hyphens (-) to separate words or segments in the URI path
 
     Avoid using underscores, camel case, Pascal case, spaces, special characters in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
 
@@ -141,7 +193,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-8.  ### Use Underscore (\_) separate query strings in the URI path
+10. ### Use Underscore (\_) separate query strings in the URI path
 
     literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
 
@@ -156,7 +208,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-9.  ### Use Nesting on Endpoints to Show Relationships
+11. ### Use Nesting on Endpoints to Show Relationships
 
     Sometimes, API endpoints can have relationships with each other, and in those cases, it can be helpful to nest them for better clarity and understanding
 
@@ -175,7 +227,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-10. ### Limit the nesting of resources to a reasonable level by using top-level resources
+12. ### Limit the nesting of resources to a reasonable level by using top-level resources
 
     This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
 
@@ -191,7 +243,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-11. ### Use forward slashes (/) for hierarchy but not trailing forward slash (/)
+13. ### Use forward slashes (/) for hierarchy but not trailing forward slash (/)
 
     It is recommended to use forward slashes for indicating hierarchy, but not to use a trailing forward slash.
 
@@ -209,7 +261,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-12. ### Use query component to filtering, sorting, paging, and field selection
+14. ### Use query component to filtering, sorting, paging, and field selection
 
     As your database grows, managing it can become a daunting task, especially when it comes to retrieving specific data without exposing the entire database. To address this challenge, REST APIs offer four types of filtering options: filtering, sorting, paging, and field selection.
 
@@ -249,7 +301,7 @@
 
     **[⬆ Back to Top](#table-of-contents)**
 
-13. ### Use consistent error messages
+15. ### Use consistent error messages
 
     In most cases, HTTP status codes are not enough to explain what went wrong.
 
@@ -263,7 +315,7 @@
     Error links: URLs to resources or documentation that provide additional information about the error and how it can be resolved.
     Timestamp: The time when the error occurred.
 
-14. ### Use Status Codes in Error Handling
+16. ### Use Status Codes in Error Handling
 
     You should always use regular HTTP status codes in responses to requests made to your API. This will help your users to know what is going on – whether the request is successful, or if it fails, or something else.
 
@@ -278,33 +330,6 @@
     400 means bad request and 404 means resource not found
     500 – 599 Server-side errors
     For example, 500 means an internal server error
-
-15. ### Use appropriate data structure
-
-    It's a common misconception that REST API must use JSON structure. But REST is all about a resource. That resource can be a JPEG image, HTML document, or any data structure.
-
-    Find out what works for you. A lot of company API guidelines force the use of JSON.
-
-    Valid JSON schema
-    If you use JSON, follow these best practices:
-
-    Valid JSON Schema should be used for both request and response bodies.
-    Include the "Content-Type" header set to "application/json" in all requests and responses when sending JSON data.
-    Use JSON even when communicating error messages. Don't just return plain text or HTML.
-
-16. ### Pick your JSON field naming convention (and stick to it)
-
-    JSON standard doesn't impose a field naming convention, but it's a best practice to pick one and stick with it.
-
-    Convention Description Example
-    snake_case Lowercase letters with underscores separating words "user_name"
-    camelCase
-    Lowercase first letter of first word, capitalizing the first letter of subsequent words
-
-    "userName"
-    PascalCase Capitalizing the first letter of each word "UserName"
-    kebab-case Lowercase letters with hyphens separating words "user-name"
-    camelCase and snake_case are the most common. I prefer camelCase and I don't recommend PascalCase or kebab-case.
 
 17. ### Version your APIs
 
