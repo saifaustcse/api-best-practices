@@ -322,45 +322,52 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 13. Use query component to filtering, sorting, paging, and field selection
+## 13. Use Query Component for Filtering, Sorting, Paging, and Field Selection
 
-    As your database grows, managing it can become a daunting task, especially when it comes to retrieving specific data without exposing the entire database. To address this challenge, REST APIs offer four types of filtering options: filtering, sorting, paging, and field selection.
+As your database grows, managing data retrieval can become challenging, especially when you need to retrieve specific data without exposing the entire database. REST APIs provide four types of filtering options: filtering, sorting, paging, and field selection, enabling efficient data retrieval without compromising security or overwhelming the client's bandwidth.
 
-    By leveraging these options, you can retrieve the necessary data efficiently and effectively, without compromising security or overloading the client's bandwidth.
+### Filtering
 
-    Filtering
-    Using this you can filter results that satisfy your required conditions. You can use search parameters like country, creation, date and etc for this.
+Filtering allows you to retrieve results that meet specific conditions using search parameters such as country, creation date, and more.
 
-    GET /users?country=UK
-    GET /users?creation_date=2021-10-11
-    GET /users?creation_date=2021-10-11
+Example queries:
 
-    Sorting
+- `GET /users?country=UK`
+- `GET /users?creation_date=2021-10-11`
+- `GET /users?name=John&age=30`
 
-    You can sort your results in ascending and descending order using this option.
+### Sorting
 
-    GET /users?sort=birthdate_date:asc
-    GET /users?sort=birthdate_date:desc
+Sorting lets you order results in ascending or descending order based on a specified field.
 
-    Paging
-    Using the ‘limit’ option, you can narrow down the results to the required number. You can also use ‘offset’ to show the part of the overall results displayed.
+Example queries:
 
-    GET /users?limit=120
-    GET /users?offset=3
+- `GET /users?sort=birthdate:asc`
+- `GET /users?sort=creation_date:desc`
 
-    Field Selection
-    Using the field selection function, you can request to display a specific part of the data available for that object. While you query an object with many fields, you can specify the fields in your response. An object will have ‘Name’, ‘Surname’, ‘Birthdate’, ‘Email’, ‘Phone’ as its fields.
+### Paging
 
-    For example, when you want to retrieve the birthdate and email to automate birthday wishes. You can use a query like this:
+Paging helps narrow down results by specifying the number of items to display and the offset to skip.
 
-    For a specific user:
+Example queries:
 
-    GET/ users/123?fields=name,birthdate,email
-    For a full list of users:
+- `GET /users?limit=50`
+- `GET /users?limit=20&offset=40`
 
-    GET/ users?fields=name,birthdate,email
+### Field Selection
 
-    **[⬆ Back to Top](#table-of-contents)**
+Field selection allows you to request specific fields of an object in the API response, especially when querying objects with many fields.
+
+Example queries:
+
+- For a specific user:
+  `GET /users/123?fields=name,email`
+- For a list of users:
+  `GET /users?fields=name,email`
+
+By utilizing these query options, your API becomes more flexible and user-friendly, enabling clients to retrieve precisely the data they need with minimal overhead. It's essential to document these query parameters to guide API consumers effectively.
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## 14. Version your APIs
 
