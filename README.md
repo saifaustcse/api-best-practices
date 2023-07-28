@@ -483,11 +483,11 @@ Many articles were followed and among them, certain articles proved to be highly
 - [instagram](https://instagram.com/developer/endpoints/)
 - [facebook](https://developers.facebook.com/docs/graph-api/using-graph-api/)
 - [pinterest](https://developers.pinterest.com/docs/api/overview/)
+- [apiDoc](http://apidocjs.com/)
 
 ## API Documentation and Testing Tools
 
 - [Swagger Framework for APIs](http://swagger.io/)
-- [apiDoc](http://apidocjs.com/)
 - [postman](https://www.postman.com/)
 
 ## License
