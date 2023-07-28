@@ -182,7 +182,7 @@ If a client makes an API request to retrieve a user profile and encounters an er
 
 Using proper status codes enhances the clarity of API responses and enables API consumers to understand the outcome of their requests accurately. It's essential to use these status codes consistently to ensure effective error handling and communication with API users.
 
-5. ### Do not use verbs in the URI
+## 5. Do not use verbs in the URI
 
 Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
 
@@ -199,7 +199,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-7. ### Use Plural nouns
+## 6. Use Plural nouns
 
 Use plural when possible unless they are singleton resources.
 
@@ -217,7 +217,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-8. ### Use Lowercase letters
+## 7. Use Lowercase letters
 
 URIs should start with a letter and use only lowercase letters.
 
@@ -231,7 +231,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-9. ### Use hyphens (-) to separate words or segments in the URI path
+## 8. Use hyphens (-) to separate words or segments in the URI path
 
 Avoid using underscores, camel case, Pascal case, spaces, special characters in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
 
@@ -254,7 +254,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-10. ### Use Underscore (\_) separate query strings in the URI path
+## 9. Use Underscore (\_) separate query strings in the URI path
 
 literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
 
@@ -269,7 +269,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-11. ### Use Nesting on Endpoints to Show Relationships
+## 10. Use Nesting on Endpoints to Show Relationships
 
 Sometimes, API endpoints can have relationships with each other, and in those cases, it can be helpful to nest them for better clarity and understanding
 
@@ -288,7 +288,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-12. ### Limit the nesting of resources to a reasonable level by using top-level resources
+## 11. Limit the nesting of resources to a reasonable level by using top-level resources
 
 This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
 
@@ -304,7 +304,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-13. ### Use forward slashes (/) for hierarchy but not trailing forward slash (/)
+## 12. Use forward slashes (/) for hierarchy but not trailing forward slash (/)
 
 It is recommended to use forward slashes for indicating hierarchy, but not to use a trailing forward slash.
 
@@ -322,7 +322,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-14. ### Use query component to filtering, sorting, paging, and field selection
+## 13. Use query component to filtering, sorting, paging, and field selection
 
     As your database grows, managing it can become a daunting task, especially when it comes to retrieving specific data without exposing the entire database. To address this challenge, REST APIs offer four types of filtering options: filtering, sorting, paging, and field selection.
 
@@ -362,7 +362,7 @@ Here are a few examples to show how the endpoints should look like,
 
     **[⬆ Back to Top](#table-of-contents)**
 
-15. ### Version your APIs
+## 14. Version your APIs
 
     Always attempt to version your APIs. You can provide an upgrade path without making any fundamental changes to the existing APIs by versioning your APIs. You can also let users know that updated versions of the API are accessible at the following fully-qualified URIs.
 
@@ -372,7 +372,7 @@ Here are a few examples to show how the endpoints should look like,
     http://api.example.com/v1/store/items/{item-id}
     http://api.example.com/v2/store/employees/{emp-id}/address
 
-16. ### Consider applying a rate limit for API calls
+## 15. Consider applying a rate limit for API calls
 
     Rate limiting is a technique for limiting the number of API requests that a client can make in a given time period.
 
@@ -384,7 +384,7 @@ Here are a few examples to show how the endpoints should look like,
     The Retry-After header specifies the amount of time the user must wait before making additional requests.
     The Retry-Remaining header specifies the count of remaining calls in the given time frame.
 
-17. ### References
+## 16. References
 
     Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
 
