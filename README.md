@@ -34,17 +34,15 @@ What is REST API?
             <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
     <div>
 
-1.  # Use JSON as the Format for Sending and Receiving Data
+1.  ## Use JSON as the Format for Sending and Receiving Data
 
-    REST APIs can use various data structures, not limited to JSON. Resources can be images, HTML documents, or any other data format. JSON is commonly used in many company API guidelines due to its popularity and widespread support. When using JSON, adhere to best practices:
+REST APIs can use various data structures, not limited to JSON. Resources can be images, HTML documents, or any other data format. JSON is commonly used in many company API guidelines due to its popularity and widespread support. When using JSON, adhere to best practices:
 
-    - Use valid JSON Schema for both request and response bodies to ensure consistency and data validation.
-    - Set the "Content-Type" header to "application/json" in all API requests and responses involving JSON data.
-    - Utilize JSON even for error messages, avoiding plain text or HTML responses.
+- Use valid JSON Schema for both request and response bodies to ensure consistency and data validation.
+- Set the "Content-Type" header to "application/json" in all API requests and responses involving JSON data.
+- Utilize JSON even for error messages, avoiding plain text or HTML responses.
 
-## Example API Endpoint: `/user`
-
-**Method:** POST
+**Example API Endpoint: `/user` Method: `POST`**
 
 **Description:** This API allows clients to create a new user by sending a JSON payload in the request. The API will then return a JSON response containing the details of the newly created user.
 
