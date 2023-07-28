@@ -20,9 +20,9 @@
 
 What is REST API?
 
-1.  ## What is REST API?
+## 1. What is REST API?
 
-2.  ## Breakdown of the parts a URL
+## 2. Breakdown of the parts a URL
 
 <div  style="text-align: center;">
         <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_path.png?raw=true" width="700" height="300">
@@ -34,7 +34,28 @@ Here is an example of full path API URLs:
         <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
 <div>
 
-3. ## Use Appropriate Data Structure
+## 3. Use HTTP methods to communicate intent
+
+One of the key principles of REST APIs is the use of standard HTTP methods to communicate the intent of the request.
+
+The following table helps you in understanding the REST API Verbs:
+
+| REST Verb | Action                                               |
+| --------- | ---------------------------------------------------- |
+| GET       | Fetches a record or set of resources from the server |
+| OPTIONS   | Fetches all available REST operations                |
+| POST      | Creates a new set of resources or a resource         |
+| PUT       | Updates or replaces the given record                 |
+| PATCH     | Modifies the given record                            |
+| DELETE    | Deletes the given resource                           |
+
+Reources :
+
+- [PATCH vs PUT in REST API ](https://josipmisko.com/posts/patch-vs-put-rest-api) Differences between PATCH and PUT
+
+**[⬆ Back to Top](#table-of-contents)**
+
+## 4. Use Appropriate Data Structure
 
 It's a common misconception that REST API must use JSON structure. But REST is all about a resource. That resource can be a JPEG image, HTML document, or any data structure.
 
@@ -72,7 +93,7 @@ Find out what works for you. A lot of company API guidelines force the use of JS
 
 By using JSON for both the request payload and the response, the API ensures a standardized data format and efficient data exchange between the client and the server.
 
-2. ## Pick your JSON Field Naming Convention (and Stick to It)
+## 5. Pick your JSON Field Naming Convention (and Stick to It)
 
 When working with JSON data, it's important to establish a consistent field naming convention for better readability and maintainability. While JSON doesn't enforce any specific naming convention, following a standard practice can greatly improve code consistency. Here are some common conventions along with their descriptions and examples:
 
@@ -97,166 +118,209 @@ When working with JSON data, it's important to establish a consistent field nami
 
 Out of these conventions, **camelCase** and **snake_case** are the most widely used and recommended. For consistency, it's best to choose one of these conventions and use it throughout your JSON data structures.
 
-3. ## Use HTTP methods to communicate intent
+## 3. Use Consistent Error Messages
 
-One of the key principles of REST APIs is the use of standard HTTP methods to communicate the intent of the request.
+In API development, relying solely on HTTP status codes to convey error information may not be sufficient for effective error handling. To provide better support for API consumers, it is recommended to include structured JSON error messages in the API responses.
 
-The following table helps you in understanding the REST API Verbs:
+A well-formed error message should consist of the following components:
 
-| REST Verb | Action                                               |
-| --------- | ---------------------------------------------------- |
-| GET       | Fetches a record or set of resources from the server |
-| OPTIONS   | Fetches all available REST operations                |
-| POST      | Creates a new set of resources or a resource         |
-| PUT       | Updates or replaces the given record                 |
-| PATCH     | Modifies the given record                            |
-| DELETE    | Deletes the given resource                           |
+- **Error Code:** A machine-readable error code that uniquely identifies the specific error condition. This allows developers to programmatically handle different types of errors.
 
-Reources :
+- **Error Message:** A human-readable message that provides a clear and detailed explanation of the encountered error. This helps API consumers understand the issue at hand.
 
-- [PATCH vs PUT in REST API ](https://josipmisko.com/posts/patch-vs-put-rest-api) Differences between PATCH and PUT
+- **Error Context:** Additional information related to the error, such as the request ID, the specific request parameters that triggered the error, or the field(s) in the request causing the issue. Providing contextual data aids in debugging and troubleshooting.
+
+- **Error Links:** URLs to resources or documentation that offer further insights into the error and potential resolutions. These links guide API consumers in resolving the problem efficiently.
+
+- **Timestamp:** The time when the error occurred, enabling developers to identify the exact timing of the issue.
+
+**Example:**
+
+```json
+{
+  "errorCode": "40001",
+  "errorMessage": "Invalid input: Missing 'email' field in the request.",
+  "errorContext": {
+    "requestId": "123456789",
+    "requestParameters": {
+      "name": "John Doe",
+      "age": 30
+    }
+  },
+  "errorLinks": [
+    "https://example.com/docs/errors/40001",
+    "https://example.com/support/contact"
+  ],
+  "timestamp": "2023-07-19T15:30:45Z"
+}
+```
+
+In this example, the structured JSON error message provides clear information about the encountered error, including an error code, a detailed error message, relevant context data, links for further assistance, and the timestamp of the occurrence. By consistently using such error messages, API developers can greatly improve the error handling experience for consumers.
+
+### 4. Use Status Codes in Error Handling
+
+In API development, employing appropriate HTTP status codes in your responses is crucial for clear and effective communication with API consumers. Status codes provide essential information about the outcome of a request, indicating whether it was successful, encountered an error, or requires redirection. Below are different HTTP status code ranges and their respective meanings:
+
+- **1XX (Informational Responses):** These are informational responses indicating that the server has received the request and is continuing to process it. An example is 102, which signifies that the resource is being processed.
+
+- **3XX (Redirects):** These status codes indicate that further action needs to be taken to complete the request. For instance, 301 indicates that the requested resource has permanently moved to a new location.
+
+- **4XX (Client-side Errors):** Status codes in this range indicate that there was an issue with the client's request. For example, 400 represents a bad request, while 404 indicates that the requested resource was not found.
+
+- **5XX (Server-side Errors):** Status codes in this range indicate that an error occurred on the server while processing the request. For instance, 500 signifies an internal server error.
+
+**Example:**
+
+If a client makes an API request to retrieve a user profile and encounters an error due to an invalid user ID, the server may respond with a 404 status code and a corresponding error message like this:
+
+```json
+{
+  "statusCode": 404,
+  "message": "User not found. Please provide a valid user ID."
+}
+```
+
+Using proper status codes enhances the clarity of API responses and enables API consumers to understand the outcome of their requests accurately. It's essential to use these status codes consistently to ensure effective error handling and communication with API users.
+
+5. ### Do not use verbs in the URI
+
+Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
+
+Here are a few examples to show how the endpoints should look like,
+
+| Do's            | Don'ts               |
+| --------------- | -------------------- |
+| POST /users     | POST /createUser     |
+| GET /users      | GET /getAllUsers     |
+| GET /users/1    | GET /getUserById/1   |
+| PUT /users/1    | PUT /updateUser/1    |
+| PATCH /users/1  | PATCH /modifyUser/1  |
+| DELETE /users/1 | DELETE /deleteUser/1 |
 
 **[⬆ Back to Top](#table-of-contents)**
 
-6. ### Do not use verbs in the URI
-
-   Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
-
-   Here are a few examples to show how the endpoints should look like,
-
-   | Do's            | Don'ts               |
-   | --------------- | -------------------- |
-   | POST /users     | POST /createUser     |
-   | GET /users      | GET /getAllUsers     |
-   | GET /users/1    | GET /getUserById/1   |
-   | PUT /users/1    | PUT /updateUser/1    |
-   | PATCH /users/1  | PATCH /modifyUser/1  |
-   | DELETE /users/1 | DELETE /deleteUser/1 |
-
-   **[⬆ Back to Top](#table-of-contents)**
-
 7. ### Use Plural nouns
 
-   Use plural when possible unless they are singleton resources.
+Use plural when possible unless they are singleton resources.
 
-   Here are a few examples to show how the endpoints should look like,
+Here are a few examples to show how the endpoints should look like,
 
-   | Do's                        | Don'ts                              |
-   | --------------------------- | ----------------------------------- |
-   | POST /users                 | POST /user                          |
-   | GET /users                  | GET /user                           |
-   | GET /users/123              | GET /user/123                       |
-   | PUT /users/123              | PUT /user/123                       |
-   | PATCH /users/123            | PATCH /user/123                     |
-   | DELETE /users/123           | DELETE /user/123                    |
-   | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30 |
+| Do's                        | Don'ts                              |
+| --------------------------- | ----------------------------------- |
+| POST /users                 | POST /user                          |
+| GET /users                  | GET /user                           |
+| GET /users/123              | GET /user/123                       |
+| PUT /users/123              | PUT /user/123                       |
+| PATCH /users/123            | PATCH /user/123                     |
+| DELETE /users/123           | DELETE /user/123                    |
+| GET /users?name=John&age=30 | GET /users?userName=John&userAge=30 |
 
-   **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 8. ### Use Lowercase letters
 
-   URIs should start with a letter and use only lowercase letters.
+URIs should start with a letter and use only lowercase letters.
 
-   Here are a few examples to show how the endpoints should look like,
+Here are a few examples to show how the endpoints should look like,
 
-   | Do's       | Don'ts           |
-   | ---------- | ---------------- |
-   | GET /users | GET /getAllUsers |
-   | GET /users | GET /GetAllUsers |
-   | GET /users | GET /USERS       |
+| Do's       | Don'ts           |
+| ---------- | ---------------- |
+| GET /users | GET /getAllUsers |
+| GET /users | GET /GetAllUsers |
+| GET /users | GET /USERS       |
 
-   **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 9. ### Use hyphens (-) to separate words or segments in the URI path
 
-   Avoid using underscores, camel case, Pascal case, spaces, special characters in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
+Avoid using underscores, camel case, Pascal case, spaces, special characters in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
 
-   Here are a few examples to show how the endpoints should look like,
+Here are a few examples to show how the endpoints should look like,
 
-   | Do's            | Don'ts            |
-   | --------------- | ----------------- |
-   | /user-roles     | /user_roles       |
-   | /user-roles     | /User_Roles       |
-   | /user-roles     | /userRoles        |
-   | /user-roles     | /UserRoles        |
-   | /user-roles     | /user%20roles     |
-   | /user-roles     | /user roles       |
-   | /user-roles/123 | /user_roles/123   |
-   | /user-roles/123 | /User_Roles/123   |
-   | /user-roles/123 | /userRoles/123    |
-   | /user-roles/123 | /UserRoles/123    |
-   | /user-roles/123 | /user roles/123   |
-   | /user-roles/123 | /user%20roles/123 |
+| Do's            | Don'ts            |
+| --------------- | ----------------- |
+| /user-roles     | /user_roles       |
+| /user-roles     | /User_Roles       |
+| /user-roles     | /userRoles        |
+| /user-roles     | /UserRoles        |
+| /user-roles     | /user%20roles     |
+| /user-roles     | /user roles       |
+| /user-roles/123 | /user_roles/123   |
+| /user-roles/123 | /User_Roles/123   |
+| /user-roles/123 | /userRoles/123    |
+| /user-roles/123 | /UserRoles/123    |
+| /user-roles/123 | /user roles/123   |
+| /user-roles/123 | /user%20roles/123 |
 
-   **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 10. ### Use Underscore (\_) separate query strings in the URI path
 
-    literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
+literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
 
-    Here are a few examples to show how the endpoints should look like,
+Here are a few examples to show how the endpoints should look like,
 
-    | Do's                                  | Don'ts                              |
-    | ------------------------------------- | ----------------------------------- |
-    | /api/users?sort_by=firstName_desc     | /api/users?sortBy=firstName_desc    |
-    | /api/users?filter_by=active           | /api/users?filterBy=active          |
-    | /api/users?page_size=10&page_number=2 | /api/users?pageSize=10&pageNumber=2 |
-    | /api/users?search_query=john          | /api/users?searchQuery=john         |
+| Do's                                  | Don'ts                              |
+| ------------------------------------- | ----------------------------------- |
+| /api/users?sort_by=firstName_desc     | /api/users?sortBy=firstName_desc    |
+| /api/users?filter_by=active           | /api/users?filterBy=active          |
+| /api/users?page_size=10&page_number=2 | /api/users?pageSize=10&pageNumber=2 |
+| /api/users?search_query=john          | /api/users?searchQuery=john         |
 
-    **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 11. ### Use Nesting on Endpoints to Show Relationships
 
-    Sometimes, API endpoints can have relationships with each other, and in those cases, it can be helpful to nest them for better clarity and understanding
+Sometimes, API endpoints can have relationships with each other, and in those cases, it can be helpful to nest them for better clarity and understanding
 
-    Here are a few examples to show how the endpoints should look like,
+Here are a few examples to show how the endpoints should look like,
 
-    | Do's                     | Don'ts                           |
-    | ------------------------ | -------------------------------- |
-    | /api/users/1/roles       | /api/users/1/roles               |
-    | /api/users/1/roles/3     | /api/users/1/roles/3             |
-    | /api/users/1/friends     | /api/users/1/friends             |
-    | /api/users/1/friends/2   | /api/users/1/friends/2           |
-    | /api/users/1/posts       | /api/users/1/posts               |
-    | /api/users/1/posts/5     | /api/users/1/posts/5             |
-    | /api/posts/5/comments    | /api/users/1/posts/5/comments    |
-    | /api/posts/5/comments/10 | /api/users/1/posts/5/comments/10 |
+| Do's                     | Don'ts                           |
+| ------------------------ | -------------------------------- |
+| /api/users/1/roles       | /api/users/1/roles               |
+| /api/users/1/roles/3     | /api/users/1/roles/3             |
+| /api/users/1/friends     | /api/users/1/friends             |
+| /api/users/1/friends/2   | /api/users/1/friends/2           |
+| /api/users/1/posts       | /api/users/1/posts               |
+| /api/users/1/posts/5     | /api/users/1/posts/5             |
+| /api/posts/5/comments    | /api/users/1/posts/5/comments    |
+| /api/posts/5/comments/10 | /api/users/1/posts/5/comments/10 |
 
-    **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 12. ### Limit the nesting of resources to a reasonable level by using top-level resources
 
-    This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
+This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
 
-    Here are a few examples to show how the endpoints should look like,
+Here are a few examples to show how the endpoints should look like,
 
-    | Do's                     | Don'ts                                   |
-    | ------------------------ | ---------------------------------------- |
-    | /api/comments/10/replies | /api/users/1/posts/5/comments/10/replies |
-    | /api/posts/5/tags        | /api/users/1/posts/5/tags                |
-    | /api/comments/10/likes   | /api/users/1/posts/5/comments/10/likes   |
-    | /api/posts/5/author      | /api/users/1/posts/5/author              |
-    | /api/users/1/followers   | /api/users/1/posts/5/author/followers    |
+| Do's                     | Don'ts                                   |
+| ------------------------ | ---------------------------------------- |
+| /api/comments/10/replies | /api/users/1/posts/5/comments/10/replies |
+| /api/posts/5/tags        | /api/users/1/posts/5/tags                |
+| /api/comments/10/likes   | /api/users/1/posts/5/comments/10/likes   |
+| /api/posts/5/author      | /api/users/1/posts/5/author              |
+| /api/users/1/followers   | /api/users/1/posts/5/author/followers    |
 
-    **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 13. ### Use forward slashes (/) for hierarchy but not trailing forward slash (/)
 
-    It is recommended to use forward slashes for indicating hierarchy, but not to use a trailing forward slash.
+It is recommended to use forward slashes for indicating hierarchy, but not to use a trailing forward slash.
 
-    Here are a few examples to show how the endpoints should look like,
+Here are a few examples to show how the endpoints should look like,
 
-    | Do's                        | Don'ts                               |
-    | --------------------------- | ------------------------------------ |
-    | POST /users                 | POST /user/                          |
-    | GET /users                  | GET /user/                           |
-    | GET /users/123              | GET /user/123/                       |
-    | PUT /users/123              | PUT /user/123/                       |
-    | PATCH /users/123            | PATCH /user/123/                     |
-    | DELETE /users/123           | DELETE /user/123/                    |
-    | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30/ |
+| Do's                        | Don'ts                               |
+| --------------------------- | ------------------------------------ |
+| POST /users                 | POST /user/                          |
+| GET /users                  | GET /user/                           |
+| GET /users/123              | GET /user/123/                       |
+| PUT /users/123              | PUT /user/123/                       |
+| PATCH /users/123            | PATCH /user/123/                     |
+| DELETE /users/123           | DELETE /user/123/                    |
+| GET /users?name=John&age=30 | GET /users?userName=John&userAge=30/ |
 
-    **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
 14. ### Use query component to filtering, sorting, paging, and field selection
 
@@ -298,37 +362,7 @@ Reources :
 
     **[⬆ Back to Top](#table-of-contents)**
 
-15. ### Use consistent error messages
-
-    In most cases, HTTP status codes are not enough to explain what went wrong.
-
-    To help your API consumers, include a structured JSON error message.
-
-    The response should include the following information:
-
-    Error code: A machine-readable error code that identifies the specific error condition.
-    Error message: A human-readable message that provides a detailed explanation of the error.
-    Error context: Additional information related to the error, such as the request ID, the request parameters that caused the error, or the field(s) in the request that caused the error.
-    Error links: URLs to resources or documentation that provide additional information about the error and how it can be resolved.
-    Timestamp: The time when the error occurred.
-
-16. ### Use Status Codes in Error Handling
-
-    You should always use regular HTTP status codes in responses to requests made to your API. This will help your users to know what is going on – whether the request is successful, or if it fails, or something else.
-
-    Below is a table showing different HTTP Status Code ranges and their meanings:
-
-    STATUS CODE RANGE MEANING
-    100 – 199 Informational Responses.
-    For example, 102 indicates the resource is being processed
-    300 – 399 Redirects
-    For example, 301 means Moved permanently
-    400 – 499 Client-side errors
-    400 means bad request and 404 means resource not found
-    500 – 599 Server-side errors
-    For example, 500 means an internal server error
-
-17. ### Version your APIs
+15. ### Version your APIs
 
     Always attempt to version your APIs. You can provide an upgrade path without making any fundamental changes to the existing APIs by versioning your APIs. You can also let users know that updated versions of the API are accessible at the following fully-qualified URIs.
 
@@ -338,7 +372,7 @@ Reources :
     http://api.example.com/v1/store/items/{item-id}
     http://api.example.com/v2/store/employees/{emp-id}/address
 
-18. ### Consider applying a rate limit for API calls
+16. ### Consider applying a rate limit for API calls
 
     Rate limiting is a technique for limiting the number of API requests that a client can make in a given time period.
 
@@ -350,7 +384,7 @@ Reources :
     The Retry-After header specifies the amount of time the user must wait before making additional requests.
     The Retry-Remaining header specifies the count of remaining calls in the given time frame.
 
-19. ### References
+17. ### References
 
     Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
 
