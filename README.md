@@ -34,44 +34,45 @@ What is REST API?
             <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
     <div>
 
-1.  ### Use JSON as the Format for Sending and Receiving Data
+1.  # Use JSON as the Format for Sending and Receiving Data
 
-- REST APIs can use various data structures, not limited to JSON. Resources can be images, HTML documents, or any other data format.
-- JSON is commonly used in many company API guidelines due to its popularity and widespread support.
-- When using JSON, adhere to best practices:
-  - Use valid JSON Schema for both request and response bodies to ensure consistency and data validation.
-  - Set the "Content-Type" header to "application/json" in all API requests and responses involving JSON data.
-  - Utilize JSON even for error messages, avoiding plain text or HTML responses.
+    REST APIs can use various data structures, not limited to JSON. Resources can be images, HTML documents, or any other data format. JSON is commonly used in many company API guidelines due to its popularity and widespread support. When using JSON, adhere to best practices:
 
-Here's an example of a simple API that accepts JSON payloads in requests and returns JSON in responses:
+    - Use valid JSON Schema for both request and response bodies to ensure consistency and data validation.
+    - Set the "Content-Type" header to "application/json" in all API requests and responses involving JSON data.
+    - Utilize JSON even for error messages, avoiding plain text or HTML responses.
 
-**API Endpoint:** `/user`
+## Example API Endpoint: `/user`
 
 **Method:** POST
 
 **Description:** This API allows clients to create a new user by sending a JSON payload in the request. The API will then return a JSON response containing the details of the newly created user.
 
-    **Request Payload:**
+**Request Payload:**
 
-    {
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "age": 30
-    }
+```json
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "age": 30
+}
+```
 
-    **Response:**
+**Response:**
 
-    {
-    "id": "123456789",
-    "name": "John Doe",
-    "email": "john.doe@example.com",
-    "age": 30,
-    "createdAt": "2023-07-19T12:34:56Z"
-    }
+```json
+{
+  "id": "123456789",
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "age": 30,
+  "createdAt": "2023-07-19T12:34:56Z"
+}
+```
 
-    In this example, the client sends a JSON payload with the user's name, email, and age in the request. The server processes the request, creates a new user, and responds with a JSON object containing the newly created user's details, including an automatically generated `id` and `createdAt` timestamp.
+In this example, the client sends a JSON payload with the user's name, email, and age in the request. The server processes the request, creates a new user, and responds with a JSON object containing the newly created user's details, including an automatically generated `id` and `createdAt` timestamp.
 
-    By using JSON for both the request payload and the response, the API ensures a standardized data format and efficient data exchange between the client and the server.
+By using JSON for both the request payload and the response, the API ensures a standardized data format and efficient data exchange between the client and the server.
 
 3.  ### Use HTTP methods to communicate intent
 
