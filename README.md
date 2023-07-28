@@ -20,21 +20,21 @@
 
 What is REST API?
 
-1.  ### What is REST API?
+1.  ## What is REST API?
 
-1.  ### Breakdown of the parts a URL
+2.  ## Breakdown of the parts a URL
 
-    <div  style="text-align: center;">
-            <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_path.png?raw=true" width="700" height="300">
-    <div>
+<div  style="text-align: center;">
+        <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_path.png?raw=true" width="700" height="300">
+<div>
 
-    Here is an example of full path API URLs:
+Here is an example of full path API URLs:
 
-    <div  style="text-align: center;">
-            <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
-    <div>
+<div  style="text-align: center;">
+        <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
+<div>
 
-1.  ## Use JSON as the Format for Sending and Receiving Data
+3.  ## Use JSON as the Format for Sending and Receiving Data
 
 REST APIs can use various data structures, not limited to JSON. Resources can be images, HTML documents, or any other data format. JSON is commonly used in many company API guidelines due to its popularity and widespread support. When using JSON, adhere to best practices:
 
@@ -72,125 +72,125 @@ In this example, the client sends a JSON payload with the user's name, email, an
 
 By using JSON for both the request payload and the response, the API ensures a standardized data format and efficient data exchange between the client and the server.
 
-3.  ### Use HTTP methods to communicate intent
+4. ## Use HTTP methods to communicate intent
 
-    One of the key principles of REST APIs is the use of standard HTTP methods to communicate the intent of the request.
+One of the key principles of REST APIs is the use of standard HTTP methods to communicate the intent of the request.
 
-    The following table helps you in understanding the REST API Verbs:
+The following table helps you in understanding the REST API Verbs:
 
-    | REST Verb | Action                                               |
-    | --------- | ---------------------------------------------------- |
-    | GET       | Fetches a record or set of resources from the server |
-    | OPTIONS   | Fetches all available REST operations                |
-    | POST      | Creates a new set of resources or a resource         |
-    | PUT       | Updates or replaces the given record                 |
-    | PATCH     | Modifies the given record                            |
-    | DELETE    | Deletes the given resource                           |
+| REST Verb | Action                                               |
+| --------- | ---------------------------------------------------- |
+| GET       | Fetches a record or set of resources from the server |
+| OPTIONS   | Fetches all available REST operations                |
+| POST      | Creates a new set of resources or a resource         |
+| PUT       | Updates or replaces the given record                 |
+| PATCH     | Modifies the given record                            |
+| DELETE    | Deletes the given resource                           |
 
-    Reources :
+Reources :
 
-    - [PATCH vs PUT in REST API ](https://josipmisko.com/posts/patch-vs-put-rest-api) Differences between PATCH and PUT
+- [PATCH vs PUT in REST API ](https://josipmisko.com/posts/patch-vs-put-rest-api) Differences between PATCH and PUT
 
-    **[⬆ Back to Top](#table-of-contents)**
+**[⬆ Back to Top](#table-of-contents)**
 
-4.  ### Use appropriate data structure
+4. ## Use appropriate data structure
 
-    It's a common misconception that REST API must use JSON structure. But REST is all about a resource. That resource can be a JPEG image, HTML document, or any data structure.
+   It's a common misconception that REST API must use JSON structure. But REST is all about a resource. That resource can be a JPEG image, HTML document, or any data structure.
 
-    Find out what works for you. A lot of company API guidelines force the use of JSON.
+   Find out what works for you. A lot of company API guidelines force the use of JSON.
 
-    Valid JSON schema
-    If you use JSON, follow these best practices:
+   Valid JSON schema
+   If you use JSON, follow these best practices:
 
-    Valid JSON Schema should be used for both request and response bodies.
-    Include the "Content-Type" header set to "application/json" in all requests and responses when sending JSON data.
-    Use JSON even when communicating error messages. Don't just return plain text or HTML.
+   Valid JSON Schema should be used for both request and response bodies.
+   Include the "Content-Type" header set to "application/json" in all requests and responses when sending JSON data.
+   Use JSON even when communicating error messages. Don't just return plain text or HTML.
 
-5.  ### Pick your JSON field naming convention (and stick to it)
+5. ### Pick your JSON field naming convention (and stick to it)
 
-    JSON standard doesn't impose a field naming convention, but it's a best practice to pick one and stick with it.
+   JSON standard doesn't impose a field naming convention, but it's a best practice to pick one and stick with it.
 
-    Convention Description Example
-    snake_case Lowercase letters with underscores separating words "user_name"
-    camelCase
-    Lowercase first letter of first word, capitalizing the first letter of subsequent words
+   Convention Description Example
+   snake_case Lowercase letters with underscores separating words "user_name"
+   camelCase
+   Lowercase first letter of first word, capitalizing the first letter of subsequent words
 
-    "userName"
-    PascalCase Capitalizing the first letter of each word "UserName"
-    kebab-case Lowercase letters with hyphens separating words "user-name"
-    camelCase and snake_case are the most common. I prefer camelCase and I don't recommend PascalCase or kebab-case.
+   "userName"
+   PascalCase Capitalizing the first letter of each word "UserName"
+   kebab-case Lowercase letters with hyphens separating words "user-name"
+   camelCase and snake_case are the most common. I prefer camelCase and I don't recommend PascalCase or kebab-case.
 
-6.  ### Do not use verbs in the URI
+6. ### Do not use verbs in the URI
 
-    Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
+   Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
 
-    Here are a few examples to show how the endpoints should look like,
+   Here are a few examples to show how the endpoints should look like,
 
-    | Do's            | Don'ts               |
-    | --------------- | -------------------- |
-    | POST /users     | POST /createUser     |
-    | GET /users      | GET /getAllUsers     |
-    | GET /users/1    | GET /getUserById/1   |
-    | PUT /users/1    | PUT /updateUser/1    |
-    | PATCH /users/1  | PATCH /modifyUser/1  |
-    | DELETE /users/1 | DELETE /deleteUser/1 |
+   | Do's            | Don'ts               |
+   | --------------- | -------------------- |
+   | POST /users     | POST /createUser     |
+   | GET /users      | GET /getAllUsers     |
+   | GET /users/1    | GET /getUserById/1   |
+   | PUT /users/1    | PUT /updateUser/1    |
+   | PATCH /users/1  | PATCH /modifyUser/1  |
+   | DELETE /users/1 | DELETE /deleteUser/1 |
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
 
-7.  ### Use Plural nouns
+7. ### Use Plural nouns
 
-    Use plural when possible unless they are singleton resources.
+   Use plural when possible unless they are singleton resources.
 
-    Here are a few examples to show how the endpoints should look like,
+   Here are a few examples to show how the endpoints should look like,
 
-    | Do's                        | Don'ts                              |
-    | --------------------------- | ----------------------------------- |
-    | POST /users                 | POST /user                          |
-    | GET /users                  | GET /user                           |
-    | GET /users/123              | GET /user/123                       |
-    | PUT /users/123              | PUT /user/123                       |
-    | PATCH /users/123            | PATCH /user/123                     |
-    | DELETE /users/123           | DELETE /user/123                    |
-    | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30 |
+   | Do's                        | Don'ts                              |
+   | --------------------------- | ----------------------------------- |
+   | POST /users                 | POST /user                          |
+   | GET /users                  | GET /user                           |
+   | GET /users/123              | GET /user/123                       |
+   | PUT /users/123              | PUT /user/123                       |
+   | PATCH /users/123            | PATCH /user/123                     |
+   | DELETE /users/123           | DELETE /user/123                    |
+   | GET /users?name=John&age=30 | GET /users?userName=John&userAge=30 |
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
 
-8.  ### Use Lowercase letters
+8. ### Use Lowercase letters
 
-    URIs should start with a letter and use only lowercase letters.
+   URIs should start with a letter and use only lowercase letters.
 
-    Here are a few examples to show how the endpoints should look like,
+   Here are a few examples to show how the endpoints should look like,
 
-    | Do's       | Don'ts           |
-    | ---------- | ---------------- |
-    | GET /users | GET /getAllUsers |
-    | GET /users | GET /GetAllUsers |
-    | GET /users | GET /USERS       |
+   | Do's       | Don'ts           |
+   | ---------- | ---------------- |
+   | GET /users | GET /getAllUsers |
+   | GET /users | GET /GetAllUsers |
+   | GET /users | GET /USERS       |
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
 
-9.  ### Use hyphens (-) to separate words or segments in the URI path
+9. ### Use hyphens (-) to separate words or segments in the URI path
 
-    Avoid using underscores, camel case, Pascal case, spaces, special characters in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
+   Avoid using underscores, camel case, Pascal case, spaces, special characters in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
 
-    Here are a few examples to show how the endpoints should look like,
+   Here are a few examples to show how the endpoints should look like,
 
-    | Do's            | Don'ts            |
-    | --------------- | ----------------- |
-    | /user-roles     | /user_roles       |
-    | /user-roles     | /User_Roles       |
-    | /user-roles     | /userRoles        |
-    | /user-roles     | /UserRoles        |
-    | /user-roles     | /user%20roles     |
-    | /user-roles     | /user roles       |
-    | /user-roles/123 | /user_roles/123   |
-    | /user-roles/123 | /User_Roles/123   |
-    | /user-roles/123 | /userRoles/123    |
-    | /user-roles/123 | /UserRoles/123    |
-    | /user-roles/123 | /user roles/123   |
-    | /user-roles/123 | /user%20roles/123 |
+   | Do's            | Don'ts            |
+   | --------------- | ----------------- |
+   | /user-roles     | /user_roles       |
+   | /user-roles     | /User_Roles       |
+   | /user-roles     | /userRoles        |
+   | /user-roles     | /UserRoles        |
+   | /user-roles     | /user%20roles     |
+   | /user-roles     | /user roles       |
+   | /user-roles/123 | /user_roles/123   |
+   | /user-roles/123 | /User_Roles/123   |
+   | /user-roles/123 | /userRoles/123    |
+   | /user-roles/123 | /UserRoles/123    |
+   | /user-roles/123 | /user roles/123   |
+   | /user-roles/123 | /user%20roles/123 |
 
-    **[⬆ Back to Top](#table-of-contents)**
+   **[⬆ Back to Top](#table-of-contents)**
 
 10. ### Use Underscore (\_) separate query strings in the URI path
 
