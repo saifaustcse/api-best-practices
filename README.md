@@ -12,11 +12,25 @@
 
 ## Table of Contents
 
-| No. | Topic                                                       |
-| --- | ----------------------------------------------------------- |
-| 1   | [Breakdown of the parts a URL](#Breakdown-of-the-parts-URL) |
-| 1   | [Breakdown of the parts a URL](#Breakdown-of-the-parts-URL) |
-| 2   | [Factory Design Pattern](#Factory-Design-Pattern)           |
+1. [What is REST API?](#1-what-is-rest-api)
+2. [Breakdown of the parts a URL](#2-breakdown-of-the-parts-a-url)
+3. [Use HTTP methods to communicate intent](#3-use-http-methods-to-communicate-intent)
+4. [Use Appropriate Data Structure](#4-use-appropriate-data-structure)
+5. [Pick your JSON Field Naming Convention (and Stick to It)](#5-pick-your-json-field-naming-convention-and-stick-to-it)
+6. [Use Consistent Error Messages](#6-use-consistent-error-messages)
+7. [Use Status Codes in Error Handling](#7-use-status-codes-in-error-handling)
+8. [Apply Rate Limit for API Calls](#8-apply-rate-limit-for-api-calls)
+9. [Do not use verbs in the URI](#9-do-not-use-verbs-in-the-uri)
+10. [Use Plural nouns](#10-use-plural-nouns)
+11. [Use Lowercase letters](#11-use-lowercase-letters)
+12. [Use hyphens (-) to separate words or segments in the URI path](#12-use-hyphens--to-separate-words-or-segments-in-the-uri-path)
+13. [Use Underscore (\_) separate query strings in the URI path](#13-use-underscore--separate-query-strings-in-the-uri-path)
+14. [Use Nesting on Endpoints to Show Relationships](#14-use-nesting-on-endpoints-to-show-relationships)
+15. [Limit the nesting of resources to a reasonable level by using top-level resources](#15-limit-the-nesting-of-resources-to-a-reasonable-level-by-using-top-level-resources)
+16. [Use forward slashes (/) for hierarchy but not trailing forward slash (/)](#16-use-forward-slashes--for-hierarchy-but-not-trailing-forward-slash-)
+17. [Use Query Component for Filtering, Sorting, Paging, and Field Selection](#17-use-query-component-for-filtering-sorting-paging-and-field-selection)
+18. [Version Your APIs](#18-version-your-apis)
+19. [References](#references)
 
 ## 1. What is REST API?
 
@@ -182,7 +196,7 @@ A well-formed error message should consist of the following components:
 
 In this example, the structured JSON error message provides clear information about the encountered error, including an error code, a detailed error message, relevant context data, links for further assistance, and the timestamp of the occurrence. By consistently using such error messages, API developers can greatly improve the error handling experience for consumers.
 
-### 4. Use Status Codes in Error Handling
+## 4. Use Status Codes in Error Handling
 
 In API development, employing appropriate HTTP status codes in your responses is crucial for clear and effective communication with API consumers. Status codes provide essential information about the outcome of a request, indicating whether it was successful, encountered an error, or requires redirection. Below are different HTTP status code ranges and their respective meanings:
 
@@ -212,7 +226,7 @@ Reources :
 - [API Best Practices: Response Handling](http://blogs.mulesoft.com/api-best-practices-response-handling/)
 - [Error handling considerations and best practices](http://soabits.blogspot.ru/2013/05/error-handling-considerations-and-best.html)
 
-## 15. Apply Rate Limit for API Calls
+## 5. Apply Rate Limit for API Calls
 
 Rate limiting is a vital mechanism to control the number of API requests a client can make within a specified time frame. By implementing rate limits, you can ensure fair usage of your API's resources and protect it from abuse or overloading. Here are key considerations for applying rate limits:
 
@@ -236,7 +250,7 @@ Rate limiting is a crucial aspect of API management, ensuring a balanced and fai
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 5. Do not use verbs in the URI
+## 6. Do not use verbs in the URI
 
 Instead of using verbs in the endpoint paths, it is advisable to structure the paths based on the resources they represent.
 
@@ -253,7 +267,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 6. Use Plural nouns
+## 7. Use Plural nouns
 
 Use plural when possible unless they are singleton resources.
 
@@ -271,7 +285,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 7. Use Lowercase letters
+## 8. Use Lowercase letters
 
 URIs should start with a letter and use only lowercase letters.
 
@@ -285,7 +299,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 8. Use hyphens (-) to separate words or segments in the URI path
+## 9. Use hyphens (-) to separate words or segments in the URI path
 
 Avoid using underscores, camel case, Pascal case, spaces, special characters in URIs. Instead, use hyphens (-) to separate words or segments in the URI path. This practice improves readability and ensures compatibility across different systems and platforms.
 
@@ -308,7 +322,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 9. Use Underscore (\_) separate query strings in the URI path
+## 10. Use Underscore (\_) separate query strings in the URI path
 
 literals or expressions in the query strings are separated using underscores (\_) to improve readability and maintain consistency in URI formatting
 
@@ -323,7 +337,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 10. Use Nesting on Endpoints to Show Relationships
+## 11. Use Nesting on Endpoints to Show Relationships
 
 Sometimes, API endpoints can have relationships with each other, and in those cases, it can be helpful to nest them for better clarity and understanding
 
@@ -342,7 +356,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 11. Limit the nesting of resources to a reasonable level by using top-level resources
+## 12. Limit the nesting of resources to a reasonable level by using top-level resources
 
 This avoids overly complex and deeply nested URIs and makes the API more intuitive and easy to use. A flatter and more modular structure is promoted, leading to better scalability and maintainability of the API.
 
@@ -358,7 +372,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 12. Use forward slashes (/) for hierarchy but not trailing forward slash (/)
+## 13. Use forward slashes (/) for hierarchy but not trailing forward slash (/)
 
 It is recommended to use forward slashes for indicating hierarchy, but not to use a trailing forward slash.
 
@@ -376,7 +390,7 @@ Here are a few examples to show how the endpoints should look like,
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 13. Use Query Component for Filtering, Sorting, Paging, and Field Selection
+## 14. Use Query Component for Filtering, Sorting, Paging, and Field Selection
 
 As your database grows, managing data retrieval can become challenging, especially when you need to retrieve specific data without exposing the entire database. REST APIs provide four types of filtering options: filtering, sorting, paging, and field selection, enabling efficient data retrieval without compromising security or overwhelming the client's bandwidth.
 
@@ -423,7 +437,7 @@ By utilizing these query options, your API becomes more flexible and user-friend
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 14. Version Your APIs
+## 15. Version Your APIs
 
 Versioning your APIs is crucial for providing a smooth upgrade path and maintaining backward compatibility when making changes. It ensures that clients can adapt to new features and improvements without disrupting existing functionality. Here are some best practices for versioning your APIs:
 
@@ -455,7 +469,7 @@ By following these versioning practices, you can provide a stable and reliable A
 
 **[⬆ Back to Top](#table-of-contents)**
 
-## 16. References
+<!-- ## 16. References
 
 Many articles were followed and among them, certain articles proved to be highly valuable. These articles provided great insight and served as inspiration for writing this article from my own perspective.
 
@@ -466,15 +480,14 @@ Many articles were followed and among them, certain articles proved to be highly
 - [partech](https://www.partech.nl/nl/publicaties/2020/07/9-trending-best-practices-for-rest-api-development#)
 
 **[⬆ Back to Top](#table-of-contents)**
+-->
 
-## Good Practices
+## References
 
 - [stackoverflow](https://stackoverflow.blog/2020/03/02/best-practices-for-rest-api-design/)
 - [Microsoft REST API Guidelines](https://github.com/Microsoft/api-guidelines/)
-- [Learn REST: A RESTful Tutorial](http://www.restapitutorial.com/)
-- [How to design a REST API](http://blog.octo.com/en/design-a-rest-api/)
-- [Best Practices for Designing a Pragmatic RESTful API](http://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
-- [White House Web API Standards](https://github.com/WhiteHouse/api-standards)
+<!-- - [Learn REST: A RESTful Tutorial](http://www.restapitutorial.com/)
+- [White House Web API Standards](https://github.com/WhiteHouse/api-standards) -->
 
 ## API Documentation Examples
 
