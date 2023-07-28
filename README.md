@@ -73,6 +73,8 @@ Here is an example of full path API URLs:
         <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
 <div>
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## 3. Use HTTP methods to communicate intent
 
 One of the key principles of REST APIs is the use of standard HTTP methods to communicate the intent of the request.
@@ -131,6 +133,8 @@ Find out what works for you. A lot of company API guidelines force the use of JS
 ```
 
 By using JSON for both the request payload and the response, the API ensures a standardized data format and efficient data exchange between the client and the server.
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## 5. Pick your JSON Field Naming Convention (and Stick to It)
 
@@ -196,6 +200,8 @@ A well-formed error message should consist of the following components:
 
 In this example, the structured JSON error message provides clear information about the encountered error, including an error code, a detailed error message, relevant context data, links for further assistance, and the timestamp of the occurrence. By consistently using such error messages, API developers can greatly improve the error handling experience for consumers.
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## 4. Use Status Codes in Error Handling
 
 In API development, employing appropriate HTTP status codes in your responses is crucial for clear and effective communication with API consumers. Status codes provide essential information about the outcome of a request, indicating whether it was successful, encountered an error, or requires redirection. Below are different HTTP status code ranges and their respective meanings:
@@ -225,6 +231,8 @@ Reources :
 
 - [API Best Practices: Response Handling](http://blogs.mulesoft.com/api-best-practices-response-handling/)
 - [Error handling considerations and best practices](http://soabits.blogspot.ru/2013/05/error-handling-considerations-and-best.html)
+
+**[⬆ Back to Top](#table-of-contents)**
 
 ## 5. Apply Rate Limit for API Calls
 
@@ -489,6 +497,8 @@ Many articles were followed and among them, certain articles proved to be highly
 <!-- - [Learn REST: A RESTful Tutorial](http://www.restapitutorial.com/)
 - [White House Web API Standards](https://github.com/WhiteHouse/api-standards) -->
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## API Documentation Examples
 
 - [twitter](https://dev.twitter.com/rest/public)
@@ -498,11 +508,17 @@ Many articles were followed and among them, certain articles proved to be highly
 - [pinterest](https://developers.pinterest.com/docs/api/overview/)
 - [apiDoc](http://apidocjs.com/)
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## API Documentation and Testing Tools
 
 - [Swagger Framework for APIs](http://swagger.io/)
 - [postman](https://www.postman.com/)
 
+**[⬆ Back to Top](#table-of-contents)**
+
 ## License
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+**[⬆ Back to Top](#table-of-contents)**
