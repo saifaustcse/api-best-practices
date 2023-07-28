@@ -182,7 +182,6 @@ If a client makes an API request to retrieve a user profile and encounters an er
 
 Using proper status codes enhances the clarity of API responses and enables API consumers to understand the outcome of their requests accurately. It's essential to use these status codes consistently to ensure effective error handling and communication with API users.
 
-
 ## 15. Apply Rate Limit for API Calls
 
 Rate limiting is a vital mechanism to control the number of API requests a client can make within a specified time frame. By implementing rate limits, you can ensure fair usage of your API's resources and protect it from abuse or overloading. Here are key considerations for applying rate limits:
@@ -425,7 +424,6 @@ Versioning your APIs is crucial for providing a smooth upgrade path and maintain
 By following these versioning practices, you can provide a stable and reliable API experience for your users while continuously improving and evolving your API without disrupting their existing integrations.
 
 **[⬆ Back to Top](#table-of-contents)**
-
 
 ## 16. References
 
