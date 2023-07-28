@@ -34,9 +34,11 @@ Here is an example of full path API URLs:
         <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
 <div>
 
-3.  ## Use JSON as the Format for Sending and Receiving Data
+3. ## Use Appropriate Data Structure
 
-REST APIs can use various data structures, not limited to JSON. Resources can be images, HTML documents, or any other data format. JSON is commonly used in many company API guidelines due to its popularity and widespread support. When using JSON, adhere to best practices:
+It's a common misconception that REST API must use JSON structure. But REST is all about a resource. That resource can be a JPEG image, HTML document, or any data structure.
+
+Find out what works for you. A lot of company API guidelines force the use of JSON. When using JSON, follow these best practices:
 
 - Use valid JSON Schema for both request and response bodies to ensure consistency and data validation.
 - Set the "Content-Type" header to "application/json" in all API requests and responses involving JSON data.
@@ -68,11 +70,34 @@ REST APIs can use various data structures, not limited to JSON. Resources can be
 }
 ```
 
-In this example, the client sends a JSON payload with the user's name, email, and age in the request. The server processes the request, creates a new user, and responds with a JSON object containing the newly created user's details, including an automatically generated `id` and `createdAt` timestamp.
-
 By using JSON for both the request payload and the response, the API ensures a standardized data format and efficient data exchange between the client and the server.
 
-4. ## Use HTTP methods to communicate intent
+2. ## Pick your JSON Field Naming Convention (and Stick to It)
+
+When working with JSON data, it's important to establish a consistent field naming convention for better readability and maintainability. While JSON doesn't enforce any specific naming convention, following a standard practice can greatly improve code consistency. Here are some common conventions along with their descriptions and examples:
+
+1. **snake_case:**
+
+   - Lowercase letters with underscores separating words.
+   - Example: "user_name"
+
+2. **camelCase:**
+
+   - Lowercase first letter of the first word, capitalizing the first letter of subsequent words.
+   - Example: "userName"
+
+3. **PascalCase:**
+
+   - Capitalizing the first letter of each word.
+   - Example: "UserName"
+
+4. **kebab-case:**
+   - Lowercase letters with hyphens separating words.
+   - Example: "user-name"
+
+Out of these conventions, **camelCase** and **snake_case** are the most widely used and recommended. For consistency, it's best to choose one of these conventions and use it throughout your JSON data structures.
+
+3. ## Use HTTP methods to communicate intent
 
 One of the key principles of REST APIs is the use of standard HTTP methods to communicate the intent of the request.
 
@@ -92,33 +117,6 @@ Reources :
 - [PATCH vs PUT in REST API ](https://josipmisko.com/posts/patch-vs-put-rest-api) Differences between PATCH and PUT
 
 **[⬆ Back to Top](#table-of-contents)**
-
-4. ## Use appropriate data structure
-
-   It's a common misconception that REST API must use JSON structure. But REST is all about a resource. That resource can be a JPEG image, HTML document, or any data structure.
-
-   Find out what works for you. A lot of company API guidelines force the use of JSON.
-
-   Valid JSON schema
-   If you use JSON, follow these best practices:
-
-   Valid JSON Schema should be used for both request and response bodies.
-   Include the "Content-Type" header set to "application/json" in all requests and responses when sending JSON data.
-   Use JSON even when communicating error messages. Don't just return plain text or HTML.
-
-5. ### Pick your JSON field naming convention (and stick to it)
-
-   JSON standard doesn't impose a field naming convention, but it's a best practice to pick one and stick with it.
-
-   Convention Description Example
-   snake_case Lowercase letters with underscores separating words "user_name"
-   camelCase
-   Lowercase first letter of first word, capitalizing the first letter of subsequent words
-
-   "userName"
-   PascalCase Capitalizing the first letter of each word "UserName"
-   kebab-case Lowercase letters with hyphens separating words "user-name"
-   camelCase and snake_case are the most common. I prefer camelCase and I don't recommend PascalCase or kebab-case.
 
 6. ### Do not use verbs in the URI
 
