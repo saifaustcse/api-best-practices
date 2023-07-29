@@ -12,41 +12,56 @@
 
 ## 1. What is REST API?
 
-A REST API is an application programming interface that adheres to a specific set of rules, enabling seamless communication between applications and services. By adhering to the principles of REST architecture, it becomes known as a RESTful API. REST APIs offer a flexible means of accessing web services without requiring extensive processing capabilities.
+REST API, which stands for Representational State Transfer Application Programming Interface, is a set of architectural constraints and principles used for designing and developing web services. It is a type of web API that allows different systems and applications to communicate and interact with each other over the internet.
+
+The core concept behind REST API is that it treats the resources of a web application as if they were objects in a data model, and it allows clients (such as web browsers or mobile applications) to perform operations on these resources using standard HTTP methods like GET, POST, PUT, PATCH, and DELETE. Each resource in a REST API is uniquely identified by a URL, and clients can interact with these resources by sending HTTP requests to the appropriate URLs.
 
 <div  style="text-align: center;">
         <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/rest-api-model.png?raw=true" width="700" height="300">
 <div>
 
-**REST API standards :**
+**Key Characteristics and Principles of REST API::**
 
-The REST API standards are a must-follow for all the REST APIs. The REST API standards have a list of constraints to abide by. These constraints are explained below.
+1. **Statelessness:** Each request from a client to the server must contain all the information needed to understand and process the request. The server does not store any state or session information about the client between requests, making it scalable and easy to manage.
 
-1. **Statelessness:** Each request must contain all necessary information, and the server does not store client-specific data between requests. This simplifies the server's architecture and improves scalability.
+2. **Resource-Based:** REST APIs are built around resources, which represent objects or entities in the system. Each resource is identified by a unique URL, and clients interact with these resources using standard HTTP methods.
 
-2. **Cacheability:** Responses can be cached to improve performance and reduce server load. Caching is controlled through cache directives in response headers.
+3. **Uniform Interface:** REST APIs use a uniform set of well-defined and standardized methods (HTTP verbs) to perform actions on resources. This uniformity makes it easier for clients to understand and interact with the API.
 
-3. **Decoupled Architecture:** The client and server are independent, and the client accesses resources through standardized HTTP methods and URIs. This promotes flexibility and allows different clients to interact with the same server.
+4. **Client-Server Architecture:** The client and server are separate entities that can evolve independently. Clients are not concerned with the storage of data or the implementation of business logic, while servers are not concerned with the user interface.
 
-4. **Layered System:** RESTful APIs can be organized into multiple layers, each with specific responsibilities. This enables separation of concerns and easy modification or addition of layers.
+5. **Layered System:** REST APIs can be built on top of multiple layers, allowing for a separation of concerns and modularity. Each layer provides specific functionality without affecting the other layers.
 
-5. **Client-Server Model:** The client and server have distinct roles, with the client responsible for the user interface and the server handling data and logic. This separation simplifies client development and server scalability.
+6. **Cacheability:** Responses from a REST API can be cached, improving performance and reducing the load on the server.
 
-6. **Code on Demand (Optional):** An optional feature allowing the server to extend client functionality by sending executable code. However, this feature is rarely used due to security concerns.
-
-Adhering to these standards ensures the creation of efficient, scalable, and maintainable RESTful APIs that provide a consistent experience for clients.
+7. **Hypermedia as the Engine of Application State (HATEOAS):** REST APIs can include hyperlinks in responses, allowing clients to discover and navigate available resources and actions dynamically.
 
 ## 2. Breakdown of the parts a URL
 
-<div  style="text-align: center;">
-        <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_path.png?raw=true" width="700" height="300">
-<div>
+A URL (Uniform Resource Locator) is a reference or address used to locate resources on the internet. It typically consists of several parts, each serving a specific purpose. Here is a breakdown of the parts of a URL:
 
-Here is an example of full path API URLs:
+```
+   protocol://hostname:port/path?query_string#fragment
+```
 
-<div  style="text-align: center;">
-        <img src="https://github.com/saifaustcse/rest-api-best-practices/blob/main/images/api_url.webp?raw=true" width="700" height="300">
-<div>
+1. **Protocol:** The protocol specifies the method or rules used to access the resource. Commonly used protocols are "http" (Hypertext Transfer Protocol) and "https" (Secure Hypertext Transfer Protocol) for web resources.
+
+2. **Hostname:** The hostname, also known as the domain name, represents the address of the server hosting the resource. For example, in "www.example.com," "www" is a subdomain, and "example.com" is the main domain.
+
+3. **Port:** The port number specifies the communication endpoint on the server for the resource. It is optional and not always included in the URL. The default port for "http" is 80, and for "https" is 443.
+
+4. **Path:** The path refers to the specific location or file on the server that the client wants to access. It represents the hierarchy of directories and subdirectories leading to the resource. For example, in "https://www.example.com/products/shoes," "/products/shoes" is the path.
+
+5. **Query String:** The query string allows passing additional parameters or data to the server as part of the URL. It starts with a question mark "?" and contains key-value pairs separated by ampersands "&." For example, in "https://www.example.com/search?query=shoes&size=10," "query=shoes" and "size=10" are query parameters.
+
+6. **Fragment:** The fragment identifies a specific section within the resource, such as an anchor or target location in an HTML document. It is indicated by a hash "#" followed by the fragment identifier. The fragment is not sent to the server but is used by the client to navigate within the retrieved resource.
+
+A complete URL may or may not include all of these parts, depending on the specific resource being accessed and the use case. For example, a simple URL without a query string and fragment might look like this: "https://www.example.com/products." On the other hand, a more complex URL with all parts included could look like this: "https://www.example.com/products/shoes?color=blue#details."
+
+**Rest API Example URL for Testing:**
+
+- [Rest Api Example](https://dummy.restapiexample.com/)
+- [Rest Api Example](https://reqres.in/)
 
 ## 3. Use HTTP methods to communicate intent
 
