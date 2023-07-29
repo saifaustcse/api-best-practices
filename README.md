@@ -56,7 +56,7 @@ A URL (Uniform Resource Locator) is a reference or address used to locate resour
 
 6. **Fragment:** The fragment identifies a specific section within the resource, such as an anchor or target location in an HTML document. It is indicated by a hash "#" followed by the fragment identifier. The fragment is not sent to the server but is used by the client to navigate within the retrieved resource.
 
-A complete URL may or may not include all of these parts, depending on the specific resource being accessed and the use case. For example, a simple URL without a query string and fragment might look like this: "https://www.example.com/products." On the other hand, a more complex URL with all parts included could look like this: "https://www.example.com/products/shoes?color=blue#details."
+A complete URL may or may not include all of these parts, depending on the specific resource being accessed and the use case.
 
 **Rest API Example URL for Testing:**
 
